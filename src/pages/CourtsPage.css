@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
   --color-primary-900: #07182E;
@@ -34,8 +34,8 @@
   --color-tennis-bg:      #FFF3D6;
   --color-tennis-text:    #7A5000;
 
-  --font-sans: 'DM Sans', system-ui, sans-serif;
-  --font-mono: 'DM Mono', 'Menlo', monospace;
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Menlo', monospace;
 
   --radius-sm:   6px;
   --radius-md:   8px;
@@ -97,7 +97,7 @@
 }
 
 .nav-link {
-  font-size: 16px;
+  font-size: 0.8125rem;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
@@ -134,7 +134,8 @@
 }
 
 .navbar__name {
-  font-size: 15px;
+  font-size: 0.8125rem;
+  font-weight: 500;
   color: rgba(255, 255, 255, 0.8);
 }
 
@@ -144,8 +145,8 @@
   border-radius: var(--radius-full);
   background-color: var(--color-accent-500);
   color: #FFFFFF;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 0.75rem;
+  font-weight: 400;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -168,16 +169,17 @@
 }
 
 .page-title {
-  font-size: 36px;
-  font-weight: 700;
+  font-size: 1.75rem;
+  font-weight: 800;
   color: var(--color-text-primary);
-  letter-spacing: -0.6px;
+  letter-spacing: -0.02em;
   line-height: 1.2;
   margin: 0 0 8px;
 }
 
 .page-subtitle {
-  font-size: 17px;
+  font-size: 1rem;
+  font-weight: 400;
   color: var(--color-text-muted);
   margin: 0;
   line-height: 1.6;
@@ -196,7 +198,7 @@
 .tab-item {
   padding: 8px 24px;
   border-radius: 8px;
-  font-size: 15px;
+  font-size: 0.875rem;
   font-weight: 500;
   font-family: var(--font-sans);
   color: var(--color-text-muted);
@@ -269,7 +271,7 @@
 }
 
 .court-card__name {
-  font-size: 18px;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--color-text-primary);
   letter-spacing: -0.3px;
@@ -304,7 +306,7 @@
 }
 
 .availability-label {
-  font-size: 14px;
+  font-size: 0.8125rem;
   font-weight: 500;
   color: var(--color-accent-500);
 }
@@ -318,8 +320,8 @@
   display: inline-block;
   padding: 4px 14px;
   border-radius: var(--radius-full);
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 0.8125rem;
+  font-weight: 500;
 }
 
 .sport-pill--badminton {
@@ -349,7 +351,7 @@
   color: #FFFFFF;
   border: none;
   border-radius: var(--radius-md);
-  font-size: 15px;
+  font-size: 0.875rem;
   font-weight: 600;
   font-family: var(--font-sans);
   cursor: pointer;
@@ -371,8 +373,8 @@
   color: var(--color-primary-800);
   border: 1.5px solid #D0D8E8;
   border-radius: var(--radius-md);
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 0.875rem;
+  font-weight: 600;
   font-family: var(--font-sans);
   cursor: pointer;
   transition: border-color 0.15s, background 0.15s;
@@ -392,7 +394,8 @@
 .btn-sm {
   height: 38px;
   padding: 0 16px;
-  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: 600;
   border-radius: var(--radius-md);
 }
 
@@ -403,14 +406,15 @@
 }
 
 .empty-state__title {
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 1.25rem;
+  font-weight: 700;
   color: var(--color-text-secondary);
   margin: 0 0 10px;
 }
 
 .empty-state__body {
-  font-size: 15px;
+  font-size: 0.75rem;
+  font-weight: 400;
   color: var(--color-text-muted);
   margin: 0;
 }

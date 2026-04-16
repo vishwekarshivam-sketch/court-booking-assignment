@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Menlo', monospace;
+}
+
 .navbar-user-btn {
   display: flex;
   align-items: center;
@@ -39,7 +46,7 @@
 }
 
 .user-dropdown__name {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   color: #0f2b52;
   margin: 0 0 2px;
@@ -72,7 +79,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   text-align: left;
   transition: background 0.12s;
@@ -94,6 +101,7 @@
 .avatar-lg {
   width: 40px;
   height: 40px;
-  font-size: 15px;
+  font-size: 0.75rem;
+  font-weight: 700;
   flex-shrink: 0;
 }

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
   --color-primary-900: #07182E;
@@ -34,8 +34,8 @@
   --color-tennis-bg:      #FFF3D6;
   --color-tennis-text:    #7A5000;
 
-  --font-sans: 'DM Sans', system-ui, sans-serif;
-  --font-mono: 'DM Mono', 'Menlo', monospace;
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Menlo', monospace;
 
   --radius-sm:   6px;
   --radius-md:   8px;
@@ -206,10 +206,10 @@
 }
 
 .court-name {
-  font-size: 36px;
-  font-weight: 700;
+  font-size: 1.75rem;
+  font-weight: 800;
   color: var(--color-text-primary);
-  letter-spacing: -0.6px;
+  letter-spacing: -0.02em;
   margin: 0 0 8px;
 }
 
@@ -220,7 +220,8 @@
 }
 
 .court-location {
-  font-size: 16px;
+  font-size: 0.75rem;
+  font-weight: 400;
   color: var(--color-text-muted);
 }
 
@@ -249,7 +250,7 @@
 }
 
 .section-title {
-  font-size: 20px;
+  font-size: 1.125rem;
   font-weight: 700;
   color: var(--color-text-primary);
   margin: 0 0 24px;
@@ -347,8 +348,8 @@
 }
 
 .slot-time {
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 0.9375rem;
+  font-weight: 600;
   color: var(--color-text-primary);
   font-family: var(--font-mono);
 }
@@ -356,8 +357,9 @@
 .slot.booked .slot-time { color: var(--color-text-disabled); }
 
 .slot-status {
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 0.75rem;
+  font-weight: 400;
+  font-family: var(--font-mono);
   color: var(--color-accent-500);
 }
 
@@ -385,7 +387,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 15px;
+  font-size: 0.8125rem;
   font-weight: 500;
   color: var(--color-text-secondary);
 }
@@ -445,7 +447,8 @@
 }
 
 .modal-subtitle {
-  font-size: 15px;
+  font-size: 0.75rem;
+  font-weight: 400;
   color: var(--color-text-muted);
 }
 
@@ -464,12 +467,13 @@
 }
 
 .summary-label {
-  font-size: 15px;
+  font-size: 0.8125rem;
+  font-weight: 500;
   color: var(--color-text-secondary);
 }
 
 .summary-value {
-  font-size: 16px;
+  font-size: 0.9375rem;
   font-weight: 600;
   color: var(--color-text-primary);
 }
@@ -494,7 +498,7 @@
   color: #FFFFFF;
   border: none;
   border-radius: var(--radius-md);
-  font-size: 16px;
+  font-size: 0.9375rem;
   font-weight: 600;
   display: inline-flex;
   align-items: center;
@@ -519,7 +523,7 @@
   color: var(--color-text-secondary);
   border: none;
   border-radius: var(--radius-md);
-  font-size: 16px;
+  font-size: 0.9375rem;
   font-weight: 600;
   cursor: pointer;
 }
@@ -537,8 +541,8 @@
   padding: 16px 24px;
   background-color: #FFF9EB;
   color: #8A5E00;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 0.75rem;
+  font-weight: 400;
   border-left: 4px solid #FFB800;
 }
 
@@ -554,7 +558,7 @@
 .sport-pill {
   padding: 4px 14px;
   border-radius: var(--radius-full);
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 600;
 }
 

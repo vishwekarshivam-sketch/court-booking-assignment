@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
   --color-primary-900: #07182E;
@@ -25,8 +25,8 @@
   --color-text-muted:     #6B7A99;
   --color-text-disabled:  #A0A9B8;
 
-  --font-sans: 'DM Sans', system-ui, sans-serif;
-  --font-mono: 'DM Mono', 'Menlo', monospace;
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Menlo', monospace;
 
   --radius-sm:   6px;
   --radius-md:   8px;
@@ -56,9 +56,9 @@
 
 /* ─── Logo ───────────────────────────────────────────────── */
 .auth-logo {
-  font-size: 28px;
-  font-weight: 700;
-  letter-spacing: -0.5px;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
   margin-bottom: 6px;
   line-height: 1.2;
 }
@@ -72,7 +72,7 @@
 }
 
 .auth-tagline {
-  font-size: 16px;
+  font-size: 0.9375rem;
   color: var(--color-text-muted);
   margin: 0 0 32px;
   font-weight: 400;
@@ -89,16 +89,17 @@
 }
 
 .auth-card-title {
-  font-size: 26px;
+  font-size: 1.375rem;
   font-weight: 700;
   color: var(--color-text-primary);
   margin: 0 0 6px;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.01em;
   line-height: 1.2;
 }
 
 .auth-card-subtitle {
-  font-size: 15px;
+  font-size: 0.9375rem;
+  font-weight: 400;
   color: var(--color-text-muted);
   margin: 0 0 32px;
   line-height: 1.6;
@@ -111,7 +112,7 @@
 
 .form-label {
   display: block;
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 600;
   color: var(--color-text-secondary);
   text-transform: uppercase;
@@ -126,7 +127,7 @@
   border: 1.5px solid #D8E0EE;
   border-radius: var(--radius-md);
   padding: 0 16px;
-  font-size: 16px;
+  font-size: 0.9375rem;
   font-family: var(--font-sans);
   color: var(--color-text-primary);
   background: #FFFFFF;
@@ -151,7 +152,8 @@
 
 .form-error {
   display: block;
-  font-size: 14px;
+  font-size: 0.75rem;
+  font-weight: 400;
   color: #B52A2A;
   margin-top: 6px;
 }
@@ -168,7 +170,7 @@
   color: #FFFFFF;
   border: none;
   border-radius: var(--radius-md);
-  font-size: 16px;
+  font-size: 0.9375rem;
   font-weight: 600;
   font-family: var(--font-sans);
   cursor: pointer;
@@ -212,7 +214,8 @@
 /* ─── Footer link ────────────────────────────────────────── */
 .auth-footer-link {
   text-align: center;
-  font-size: 15px;
+  font-size: 0.875rem;
+  font-weight: 500;
   color: var(--color-text-muted);
   margin-top: 24px;
 }
