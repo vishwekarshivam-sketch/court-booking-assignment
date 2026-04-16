@@ -5,14 +5,13 @@ import {
   Clock,
   CheckCircle2,
   X,
-  Calendar,
-  LayoutGrid,
 } from "lucide-react";
 import { format, addDays } from "date-fns";
 import { useAvailableSlots } from "../hooks/useAvailableSlots";
 import { useMakeBooking } from "../hooks/useMakeBooking";
 import { useAuth } from "../context/AuthContext";
 import { supabase } from "../lib/supabaseClient";
+import Navbar from "../components/Navbar";
 import "./CourtDetail.css";
 
 /* ─── Types ─────────────────────────────────────────────── */
@@ -167,7 +166,7 @@ function BookingConfirmModal({
 export default function CourtDetail() {
   const { courtId } = useParams();
   const navigate = useNavigate();
-  const { profile, user, signOut } = useAuth();
+  useAuth();
   
   const [court, setCourt] = useState<Court | null>(null);
   const DATES = generateDates();
@@ -207,38 +206,11 @@ export default function CourtDetail() {
     setTimeout(() => navigate('/my-bookings'), 2000);
   };
 
-  const name = profile?.full_name || user?.email || "User";
-  const initials = name.split(" ").map((n: string) => n[0]).join("").toUpperCase().substring(0, 2);
-
   if (!court) return <div style={{ padding: '2rem' }}>Loading court details...</div>;
 
   return (
     <div className="page-bg">
-      {/* ── Navbar ── */}
-      <nav className="navbar">
-        <div className="navbar-inner">
-          <div className="navbar-left">
-            <Link to="/" className="logo" style={{ textDecoration: 'none' }}>
-              Court<span className="logo-accent">Book</span>
-            </Link>
-            <div className="nav-links">
-              <Link to="/courts" className="nav-link active">
-                <LayoutGrid width={14} height={14} />
-                Courts
-              </Link>
-              <Link to="/my-bookings" className="nav-link">
-                <Calendar width={14} height={14} />
-                My Bookings
-              </Link>
-              {profile?.role === 'admin' && <Link to="/admin" className="nav-link">Admin</Link>}
-            </div>
-          </div>
-          <div className="navbar-right" style={{ cursor: 'pointer' }} onClick={() => { if(confirm("Sign out?")) signOut(); }}>
-            <span className="nav-name">{name}</span>
-            <div className="avatar">{initials}</div>
-          </div>
-        </div>
-      </nav>
+      <Navbar activePage="courts" />
 
       <div className="page-shell">
         {/* ── Breadcrumb ── */}

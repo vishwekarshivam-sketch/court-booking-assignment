@@ -2,18 +2,17 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   Plus,
-  Calendar,
-  LayoutGrid,
   CheckCircle2,
   Clock,
   XCircle,
-  ArrowRight,
   X,
+  Calendar,
 } from "lucide-react";
 import { format } from "date-fns";
 import { useMyBookings } from "../hooks/useMyBookings";
 import { useAuth } from "../context/AuthContext";
 import { supabase } from "../lib/supabaseClient";
+import Navbar from "../components/Navbar";
 import "./MyBookings.css";
 
 /* ─── Types ─────────────────────────────────────────────── */
@@ -186,7 +185,7 @@ function EmptyState({ tab }: { tab: TabKey }) {
 export default function MyBookings() {
   const [activeTab, setActiveTab] = useState<TabKey>("all");
   const { bookings, loading, error } = useMyBookings();
-  const { profile, user, signOut } = useAuth();
+  useAuth();
   const [cancelTarget, setCancelTarget] = useState<any | null>(null);
   const [successMsg, setSuccessMsg] = useState<string | null>(null);
 
@@ -197,44 +196,15 @@ export default function MyBookings() {
       ? bookings.filter((b: any) => b.status !== 'cancelled')
       : bookings.filter((b: any) => b.status === activeTab);
 
-  const handleCancelSuccess = (id: string) => {
+  const handleCancelSuccess = (_id: string) => {
     setCancelTarget(null);
     setSuccessMsg("Booking cancelled successfully.");
     setTimeout(() => setSuccessMsg(null), 4000);
-    // Data will refresh via the hook if we had real-time, 
-    // but here we might need to manually refresh or just wait for re-fetch
   };
-
-  const name = profile?.full_name || user?.email || "User";
-  const initials = name.split(" ").map((n: string) => n[0]).join("").toUpperCase().substring(0, 2);
 
   return (
     <div className="page-bg">
-      {/* ── Navbar ── */}
-      <nav className="navbar">
-        <div className="navbar-inner">
-          <div className="navbar-left">
-            <Link to="/" className="logo" style={{ textDecoration: 'none' }}>
-              Court<span className="logo-accent">Book</span>
-            </Link>
-            <div className="nav-links">
-              <Link to="/courts" className="nav-link">
-                <LayoutGrid width={14} height={14} />
-                Courts
-              </Link>
-              <Link to="/my-bookings" className="nav-link active">
-                <Calendar width={14} height={14} />
-                My Bookings
-              </Link>
-              {profile?.role === 'admin' && <Link to="/admin" className="nav-link">Admin</Link>}
-            </div>
-          </div>
-          <div className="navbar-right" style={{ cursor: 'pointer' }} onClick={() => { if(confirm("Sign out?")) signOut(); }}>
-            <span className="nav-name">{name}</span>
-            <div className="avatar">{initials}</div>
-          </div>
-        </div>
-      </nav>
+      <Navbar activePage="my-bookings" />
 
       {/* ── Success Toast ── */}
       {successMsg && (

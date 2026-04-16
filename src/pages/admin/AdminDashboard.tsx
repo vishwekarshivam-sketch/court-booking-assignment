@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import {
   LayoutGrid,
   Clock,
   CheckCircle2,
   XCircle,
-  Calendar,
   Download,
   Home,
   List,
@@ -16,6 +14,7 @@ import {
 import { format } from "date-fns";
 import { useAllBookings } from "../../hooks/useAllBookings";
 import { useAuth } from "../../context/AuthContext";
+import Navbar from "../../components/Navbar";
 import "./AdminDashboard.css";
 
 /* ─── Types ─────────────────────────────────────────────── */
@@ -179,7 +178,7 @@ function EmptyState({ tab }: { tab: AdminTab }) {
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState<AdminTab>("pending");
   const { bookings, loading, error, updateBookingStatus } = useAllBookings();
-  const { profile, user, signOut } = useAuth();
+  const { profile } = useAuth();
   const [rejectTarget, setRejectTarget] = useState<any | null>(null);
   const [toast, setToast] = useState<{ type: "success" | "danger"; msg: string } | null>(null);
   const [activeSidebar, setActiveSidebar] = useState<string>("Overview");
@@ -232,40 +231,9 @@ export default function AdminDashboard() {
     { label: "Rejected", value: rejectedCount.toString(), sub: `${Math.round((rejectedCount / (bookings.length || 1)) * 100)}% rejection rate`, subColor: "muted" },
   ];
 
-  const name = profile?.full_name || user?.email || "Admin";
-  const initials = name.split(" ").map((n: string) => n[0]).join("").toUpperCase().substring(0, 2);
-
   return (
     <div className="page-bg">
-      {/* ── Navbar ── */}
-      <nav className="navbar">
-        <div className="navbar-inner">
-          <div className="navbar-left">
-            <Link to="/" className="logo" style={{ textDecoration: 'none' }}>
-              Court<span className="logo-accent">Book</span>
-            </Link>
-            <div className="nav-links">
-              <Link to="/courts" className="nav-link">
-                <LayoutGrid width={14} height={14} />
-                Courts
-              </Link>
-              <Link to="/my-bookings" className="nav-link">
-                <Calendar width={14} height={14} />
-                My Bookings
-              </Link>
-              <Link to="/admin" className="nav-link active">
-                <Home width={14} height={14} />
-                Dashboard
-              </Link>
-            </div>
-          </div>
-          <div className="navbar-right" style={{ cursor: 'pointer' }} onClick={() => { if(confirm("Sign out?")) signOut(); }}>
-            <span className="nav-admin-badge">Admin</span>
-            <span className="nav-name">{name}</span>
-            <div className="avatar avatar-primary">{initials}</div>
-          </div>
-        </div>
-      </nav>
+      <Navbar activePage="admin" />
 
       {/* ── Toast ── */}
       {toast && (

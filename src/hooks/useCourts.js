@@ -1,14 +1,19 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { supabase } from '../lib/supabaseClient'
 
 export const useCourts = (sport = null) => {
   const [courts, setCourts] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [retryCount, setRetryCount] = useState(0)
 
   useEffect(() => {
+    let cancelled = false
+
     const fetchCourts = async () => {
       setLoading(true)
+      setError(null)
+
       let query = supabase
         .from('courts')
         .select('*')
@@ -18,15 +23,28 @@ export const useCourts = (sport = null) => {
         query = query.eq('sport', sport)
       }
 
-      const { data, error } = await query
-
-      if (error) setError(error)
-      else setCourts(data)
-      setLoading(false)
+      try {
+        const { data, error } = await query
+        if (cancelled) return
+        if (error) {
+          console.error('useCourts error:', error)
+          setError(error.message || 'Failed to fetch courts')
+        } else {
+          setCourts(data ?? [])
+        }
+      } catch (err) {
+        if (cancelled) return
+        console.error('useCourts error:', err)
+        setError(err.message || 'Failed to fetch courts')
+      }
+      if (!cancelled) setLoading(false)
     }
 
     fetchCourts()
-  }, [sport])
+    return () => { cancelled = true }
+  }, [sport, retryCount])
 
-  return { courts, loading, error }
+  const retry = useCallback(() => setRetryCount(n => n + 1), [])
+
+  return { courts, loading, error, retry }
 }

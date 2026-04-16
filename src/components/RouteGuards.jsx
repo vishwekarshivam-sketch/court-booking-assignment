@@ -5,7 +5,7 @@ import { useAuth } from '../context/AuthContext'
 export const ProtectedRoute = ({ children }) => {
   const { user, loading } = useAuth()
 
-  if (loading) return <div>Loading...</div>
+  if (loading) return null
   if (!user) return <Navigate to="/login" replace />
 
   return children
@@ -14,7 +14,7 @@ export const ProtectedRoute = ({ children }) => {
 export const AdminRoute = ({ children }) => {
   const { user, profile, loading } = useAuth()
 
-  if (loading) return <div>Loading...</div>
+  if (loading) return null
   if (!user) return <Navigate to="/login" replace />
   if (profile?.role !== 'admin') return <Navigate to="/" replace />
 
