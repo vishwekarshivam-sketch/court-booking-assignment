@@ -46,7 +46,7 @@
   color: #1a2744;
 }
 
-.page-subtitle { font-family: var(--font-heading);
+.page-subtitle { font-family: var(--font-body) !important; font-family: var(--font-heading);
   font-family: var(--font-heading);
   font-size: 14px;
   color: #475569;
@@ -149,7 +149,7 @@
   border-bottom: 1px solid #e2e8f0;
 }
 
-.data-table td {
+.data-table td { font-family: var(--font-body) !important;
   padding: 16px 20px;
   border-bottom: 1px solid #f4f6f9;
   vertical-align: middle;
@@ -309,7 +309,7 @@
   margin-bottom: 8px;
 }
 
-.empty-body { font-family: var(--font-heading);
+.empty-body { font-family: var(--font-body) !important; font-family: var(--font-heading);
   font-family: var(--font-heading);
   font-size: 14px;
   color: #94a3b8;
@@ -355,7 +355,7 @@
   line-height: 1.1;
 }
 
-.modal-subtitle { font-family: var(--font-heading);
+.modal-subtitle { font-family: var(--font-body) !important; font-family: var(--font-heading);
   font-family: var(--font-heading);
   font-size: 13px;
   color: #475569;
@@ -455,4 +455,3 @@
   border-top-color: #dc2626;
   border-radius: 50%;
   animation: spin 0.6s linear infinite;
-}

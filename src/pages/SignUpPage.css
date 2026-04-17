@@ -120,7 +120,7 @@
   margin-bottom: 8px;
 }
 
-.auth-tagline { font-family: var(--font-heading);
+.auth-tagline { font-family: var(--font-body) !important; font-family: var(--font-heading);
   font-family: var(--font-heading);
   font-size: 14px;
   color: #475569;
@@ -249,4 +249,3 @@
 
 .auth-link:hover {
   opacity: 0.7;
-}
