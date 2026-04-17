@@ -86,10 +86,14 @@ html { font-size: 16px; }
 
 body {
   background: var(--cb-bg-page);
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   -webkit-font-smoothing: antialiased;
   color: var(--cb-text-primary);
   min-height: 100vh;
+}
+
+input, button, select, textarea {
+  font-family: inherit;
 }
 
 #root {

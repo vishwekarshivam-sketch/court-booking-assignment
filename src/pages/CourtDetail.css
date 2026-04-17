@@ -24,7 +24,7 @@
 }
 
 .breadcrumb-link {
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: 13px;
   font-weight: 600;
   color: #475569;
@@ -334,7 +334,7 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: 14px;
   font-weight: 700;
   padding: 11px 24px;
@@ -361,7 +361,7 @@
   align-items: center;
   justify-content: center;
   gap: 6px;
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: 13px;
   font-weight: 600;
   padding: 11px 20px;
@@ -424,7 +424,7 @@
   margin: 0 0 4px;
 }
 
-.modal-subtitle {
+.modal-subtitle { font-family: var(--font-body);
   font-family: var(--font-body);
   font-size: 13px;
   color: #475569;
@@ -455,7 +455,7 @@
 }
 
 .summary-label {
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: 12px;
   font-weight: 600;
   color: #94a3b8;

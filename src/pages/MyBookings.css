@@ -46,7 +46,7 @@
   color: #1a2744;
 }
 
-.page-subtitle {
+.page-subtitle { font-family: var(--font-body);
   font-family: var(--font-heading);
   font-size: 14px;
   color: #475569;
@@ -60,7 +60,7 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: 14px;
   font-weight: 700;
   padding: 10px 20px;
@@ -91,7 +91,7 @@
   border: none;
   border-bottom: 2px solid transparent;
   color: #94a3b8;
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: 13px;
   font-weight: 600;
   padding: 10px 16px 12px;
@@ -140,7 +140,7 @@
 .data-table th {
   padding: 12px 20px;
   background: #f4f6f9;
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
@@ -309,7 +309,7 @@
   margin-bottom: 8px;
 }
 
-.empty-body {
+.empty-body { font-family: var(--font-body);
   font-family: var(--font-body);
   font-size: 14px;
   color: #94a3b8;
@@ -355,7 +355,7 @@
   line-height: 1.1;
 }
 
-.modal-subtitle {
+.modal-subtitle { font-family: var(--font-body);
   font-family: var(--font-body);
   font-size: 13px;
   color: #475569;
@@ -383,7 +383,7 @@
 }
 
 .summary-label {
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: 12px;
   font-weight: 600;
   color: #94a3b8;

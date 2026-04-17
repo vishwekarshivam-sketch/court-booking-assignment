@@ -114,7 +114,7 @@
   color: #1a2744;
 }
 
-.page-subtitle {
+.page-subtitle { font-family: var(--font-body);
   font-family: var(--font-body);
   font-size: 14px;
   color: #475569;
@@ -136,7 +136,7 @@
 }
 
 .stat-label {
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -195,7 +195,7 @@
   border: none;
   border-bottom: 2px solid transparent;
   color: #94a3b8;
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: 13px;
   font-weight: 600;
   padding: 10px 16px 12px;
@@ -243,7 +243,7 @@
 .data-table th {
   padding: 10px 16px;
   background: #f4f6f9;
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -426,7 +426,7 @@
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: 13px;
   font-weight: 600;
   padding: 8px 16px;
@@ -447,7 +447,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: 12px;
   font-weight: 600;
   padding: 6px 12px;
@@ -498,7 +498,7 @@
   color: #94a3b8;
 }
 
-.empty-body {
+.empty-body { font-family: var(--font-body);
   font-family: var(--font-body);
   font-size: 13px;
   color: #94a3b8;
@@ -577,7 +577,7 @@
   margin-bottom: 4px;
 }
 
-.modal-subtitle {
+.modal-subtitle { font-family: var(--font-body);
   font-family: var(--font-body);
   font-size: 13px;
   color: #475569;
@@ -605,7 +605,7 @@
 .summary-row:last-child { border-bottom: none; }
 
 .summary-label {
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: 12px;
   font-weight: 600;
   color: #94a3b8;
@@ -640,7 +640,7 @@
 
 .form-label {
   display: block;
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: 13px;
   font-weight: 600;
   color: #0f172a;

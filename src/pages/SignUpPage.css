@@ -97,7 +97,7 @@
   margin-bottom: 6px;
 }
 
-.auth-logo {
+.auth-logo { font-family: var(--font-display) !important;
   font-family: var(--font-body);
   font-size: 28px;
   font-weight: 800;
@@ -110,7 +110,7 @@
   color: #1a2744;
 }
 
-.auth-headline {
+.auth-headline { font-family: var(--font-display) !important;
   font-family: var(--font-display);
   font-size: 36px;
   font-weight: 800;
@@ -120,7 +120,7 @@
   margin-bottom: 8px;
 }
 
-.auth-tagline {
+.auth-tagline { font-family: var(--font-body);
   font-family: var(--font-body);
   font-size: 14px;
   color: #475569;
@@ -134,7 +134,7 @@
 
 .form-label {
   display: block;
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: 13px;
   font-weight: 600;
   color: #0f172a;
@@ -196,7 +196,7 @@
   width: 100%;
   background: #1a2744;
   color: #ffffff;
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.3px;
@@ -240,7 +240,7 @@
   text-align: center;
 }
 
-.auth-link {
+.auth-link { font-family: var(--font-display) !important;
   color: #1a2744;
   font-weight: 700;
   text-decoration: none;

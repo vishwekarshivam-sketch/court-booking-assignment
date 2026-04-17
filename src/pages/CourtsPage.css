@@ -2,7 +2,7 @@
 
 @keyframes spin { to { transform: rotate(360deg); } }
 
-.page-root {
+.page-root { font-family: var(--font-heading);
   min-height: 100vh;
   background: #fafafa;
   font-family: var(--font-body);
@@ -41,7 +41,7 @@
 }
 
 .stat-label {
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 1.5px;
@@ -58,7 +58,7 @@
 }
 
 /* ── Page hero ──────────────────────────────────────────── */
-.page-eyebrow {
+.page-eyebrow { font-family: var(--font-display);
   font-family: var(--font-body);
   font-size: 11px;
   font-weight: 600;
@@ -95,7 +95,7 @@
   border: none;
   border-bottom: 2px solid transparent;
   color: #94a3b8;
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: 13px;
   font-weight: 600;
   padding: 10px 16px 12px;
@@ -187,7 +187,7 @@
 }
 
 .court-card__sport-label {
-  font-family: var(--font-data);
+  font-family: var(--font-display);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 1px;
