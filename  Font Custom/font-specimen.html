@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IITB Sports Font Family — Specimen</title>
+<style>
+
+@font-face {
+  font-family: "IITB Sport Display";
+  src: url("IITBSport-Display.woff2") format("woff2");
+  font-weight: 800; font-display: swap;
+}
+@font-face {
+  font-family: "IITB Sport Heading";
+  src: url("IITBSport-Heading.woff2") format("woff2");
+  font-weight: 600; font-display: swap;
+}
+@font-face {
+  font-family: "IITB Sport Text";
+  src: url("IITBSport-Text.woff2") format("woff2");
+  font-weight: 400; font-display: swap;
+}
+@font-face {
+  font-family: "IITB Sport Mono";
+  src: url("IITBSport-Mono.woff2") format("woff2");
+  font-weight: 700; font-display: swap;
+}
+@font-face {
+  font-family: "IITB Sport Caption";
+  src: url("IITBSport-Caption.woff2") format("woff2");
+  font-weight: 300; font-display: swap;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --copper:    #C4622D;
+  --copper-lt: #D97B46;
+  --copper-dk: #9E4C22;
+  --charcoal:  #2C2420;
+  --black:     #0A0807;
+  --offwhite:  #F5F1EC;
+  --muted:     #8C7B72;
+  --rule:      #2A2220;
+}
+
+body {
+  background: var(--black);
+  color: var(--offwhite);
+  font-family: "IITB Sport Caption", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── HEADER ── */
+.site-header {
+  border-bottom: 1px solid var(--rule);
+  padding: 28px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header-logo {
+  font-family: "IITB Sport Display", sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--offwhite);
+}
+.header-logo span { color: var(--copper); }
+.header-badge {
+  font-family: "IITB Sport Caption", sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid var(--rule);
+  padding: 5px 12px;
+}
+
+/* ── HERO ── */
+.hero {
+  padding: 80px 48px 64px;
+  border-bottom: 1px solid var(--rule);
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: "IITB";
+  position: absolute;
+  right: -20px;
+  top: -20px;
+  font-family: "IITB Sport Display", sans-serif;
+  font-size: 22vw;
+  color: rgba(196, 98, 45, 0.04);
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+.hero-eyebrow {
+  font-family: "IITB Sport Caption", sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--copper);
+  margin-bottom: 20px;
+}
+.hero-title {
+  font-family: "IITB Sport Display", sans-serif;
+  font-size: clamp(4rem, 9vw, 8.5rem);
+  font-weight: 800;
+  line-height: 0.91;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: var(--offwhite);
+  margin-bottom: 32px;
+}
+.hero-title em { color: var(--copper); font-style: normal; }
+.hero-sub {
+  font-family: "IITB Sport Text", serif;
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: var(--muted);
+  max-width: 52ch;
+}
+
+/* ── LIVE SCORE STRIP ── */
+.score-strip {
+  background: var(--charcoal);
+  padding: 18px 48px;
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  border-bottom: 1px solid var(--rule);
+  overflow-x: auto;
+}
+.score-badge {
+  font-family: "IITB Sport Caption", sans-serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--copper);
+  display: block;
+  margin-bottom: 4px;
+}
+.score-match {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+.score-team {
+  font-family: "IITB Sport Heading", sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--offwhite);
+}
+.score-val {
+  font-family: "IITB Sport Mono", monospace;
+  font-size: 2rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--offwhite);
+  letter-spacing: 0.02em;
+  min-width: 2ch;
+  text-align: center;
+}
+.score-sep {
+  font-family: "IITB Sport Mono", monospace;
+  font-size: 1.2rem;
+  color: var(--copper);
+}
+.score-live {
+  font-family: "IITB Sport Mono", monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: var(--copper);
+  background: rgba(196, 98, 45, 0.12);
+  padding: 3px 7px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.score-live::before {
+  content: "";
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--copper);
+  animation: pulse 1.2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+.score-divider {
+  width: 1px;
+  height: 36px;
+  background: var(--rule);
+  flex-shrink: 0;
+}
+
+/* ── MAIN GRID ── */
+.main { padding: 0 48px; }
+
+/* ── SPECIMEN SECTION ── */
+.spec-section {
+  border-bottom: 1px solid var(--rule);
+  padding: 56px 0;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.spec-meta { padding-top: 6px; }
+.spec-number {
+  font-family: "IITB Sport Mono", monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  color: var(--copper);
+  margin-bottom: 10px;
+}
+.spec-name {
+  font-family: "IITB Sport Caption", sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--offwhite);
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+.spec-detail {
+  font-family: "IITB Sport Caption", sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 1.8;
+}
+.spec-content {}
+.spec-use-label {
+  font-family: "IITB Sport Caption", sans-serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--copper);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* FONT 1: DISPLAY */
+.display-specimen {
+  font-family: "IITB Sport Display", sans-serif;
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  font-weight: 800;
+  line-height: 0.93;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+  color: var(--offwhite);
+}
+.display-specimen .accent { color: var(--copper); }
+.display-alphabet {
+  margin-top: 24px;
+  font-family: "IITB Sport Display", sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+/* FONT 2: HEADING */
+.heading-specimen {
+  font-family: "IITB Sport Heading", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.heading-xl { font-size: 2.8rem; line-height: 1; color: var(--offwhite); margin-bottom: 12px; }
+.heading-lg { font-size: 1.8rem; line-height: 1.1; color: var(--offwhite); margin-bottom: 8px; }
+.heading-md { font-size: 1.2rem; color: var(--offwhite); margin-bottom: 6px; }
+.heading-sm { font-size: 0.9rem; color: var(--muted); }
+
+/* FONT 3: TEXT */
+.text-specimen {
+  font-family: "IITB Sport Text", serif;
+  font-size: 1.05rem;
+  line-height: 1.72;
+  color: #C4B5AD;
+  max-width: 64ch;
+}
+.text-specimen .drop-cap::first-letter {
+  font-family: "IITB Sport Display", sans-serif;
+  font-size: 4.2rem;
+  font-weight: 800;
+  line-height: 0.75;
+  float: left;
+  padding-right: 10px;
+  padding-top: 4px;
+  color: var(--copper);
+  text-transform: uppercase;
+}
+
+/* FONT 4: MONO */
+.mono-board {
+  background: var(--charcoal);
+  padding: 28px;
+  display: grid;
+  gap: 2px;
+}
+.mono-row {
+  display: grid;
+  grid-template-columns: 3ch 1fr 5ch 5ch 5ch 5ch 5ch 6ch;
+  gap: 16px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--rule);
+  font-family: "IITB Sport Mono", monospace;
+  font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+  align-items: center;
+}
+.mono-row.header {
+  font-family: "IITB Sport Caption", sans-serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 1px solid var(--copper-dk);
+  padding-bottom: 10px;
+}
+.mono-row .pos { color: var(--muted); }
+.mono-row .team-col { color: var(--offwhite); font-family: "IITB Sport Heading", sans-serif; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.mono-row .pts { color: var(--copper); font-size: 0.9rem; }
+.mono-row .num { color: #857069; }
+.mono-row.highlight { background: rgba(196, 98, 45, 0.06); }
+
+/* FONT 5: CAPTION */
+.caption-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.caption-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.caption-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--copper);
+  flex-shrink: 0;
+}
+.caption-dot.muted { background: var(--muted); }
+.caption-tag {
+  font-family: "IITB Sport Caption", sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.caption-label {
+  font-family: "IITB Sport Caption", sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--offwhite);
+}
+.caption-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border: 1px solid var(--rule);
+  font-family: "IITB Sport Caption", sans-serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  gap: 6px;
+}
+.caption-chip.active {
+  border-color: var(--copper);
+  color: var(--copper);
+  background: rgba(196, 98, 45, 0.08);
+}
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+
+/* ── USAGE CARD ── */
+.usage-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  margin: 56px 0;
+}
+.usage-cell {
+  background: var(--black);
+  padding: 28px 22px;
+}
+.usage-font-name {
+  font-family: "IITB Sport Caption", sans-serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--copper);
+  margin-bottom: 10px;
+}
+.usage-role {
+  font-family: "IITB Sport Caption", sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+.usage-example {
+  color: var(--offwhite);
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--rule);
+}
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--rule);
+  padding: 32px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-copy {
+  font-family: "IITB Sport Caption", sans-serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+@media (max-width: 768px) {
+  .spec-section { grid-template-columns: 1fr; }
+  .usage-grid { grid-template-columns: 1fr 1fr; }
+  .site-header, .hero, .main { padding-left: 24px; padding-right: 24px; }
+  .score-strip { padding-left: 24px; padding-right: 24px; }
+  footer { padding: 24px; flex-direction: column; gap: 12px; text-align: center; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-logo">IITB <span>Sports</span></div>
+  <div class="header-badge">Font Family — Specimen v1.0</div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">IIT Bombay Sports — Typographic Identity</div>
+  <h1 class="hero-title">Built<br>for <em>Victory</em><br>& Heritage</h1>
+  <p class="hero-sub">Five custom typefaces engineered for the IIT Bombay sports ecosystem — from scoreboard readability to editorial elegance, each weight carrying the weight of tradition.</p>
+</section>
+
+<!-- LIVE SCORE STRIP -->
+<div class="score-strip">
+  <div>
+    <span class="score-badge">Live Scores</span>
+    <div class="score-match">
+      <span class="score-team">IITB</span>
+      <span class="score-val">3</span>
+      <span class="score-sep">–</span>
+      <span class="score-val">1</span>
+      <span class="score-team">IITD</span>
+      <span class="score-live">Live</span>
+    </div>
+  </div>
+  <div class="score-divider"></div>
+  <div>
+    <span class="score-badge">Basketball</span>
+    <div class="score-match">
+      <span class="score-team">IITB</span>
+      <span class="score-val">74</span>
+      <span class="score-sep">:</span>
+      <span class="score-val">68</span>
+      <span class="score-team">IITK</span>
+    </div>
+  </div>
+  <div class="score-divider"></div>
+  <div>
+    <span class="score-badge">Athletics</span>
+    <div class="score-match">
+      <span class="score-team">100m Final</span>
+      <span class="score-val" style="font-size:1.2rem; color:var(--copper)">10.84s</span>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- FONT 1: DISPLAY -->
+  <div class="spec-section">
+    <div class="spec-meta">
+      <div class="spec-number">01 / 05</div>
+      <div class="spec-name">IITB Sport<br>Display</div>
+      <div class="spec-detail">
+        Weight: 800 ExtraBold<br>
+        Width: Condensed (84%)<br>
+        Tracking: −22u<br>
+        Line-height: 0.91<br>
+        Class: Display<br>
+        Base: DejaVu Sans Condensed<br>
+        Formats: TTF + WOFF2
+      </div>
+    </div>
+    <div class="spec-content">
+      <div class="spec-use-label">Hero · Event Banners · Team Names · Poster Type</div>
+      <div class="display-specimen">
+        Inter<span class="accent">-</span>IIT<br>
+        Sports<br>
+        Cham<span class="accent">p</span>ion<span class="accent">s</span>hip
+      </div>
+      <div class="display-alphabet">
+        A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>
+        0 1 2 3 4 5 6 7 8 9 &amp; % # @
+      </div>
+    </div>
+  </div>
+
+  <!-- FONT 2: HEADING -->
+  <div class="spec-section">
+    <div class="spec-meta">
+      <div class="spec-number">02 / 05</div>
+      <div class="spec-name">IITB Sport<br>Heading</div>
+      <div class="spec-detail">
+        Weight: 600 SemiBold<br>
+        Width: SemiCondensed (93%)<br>
+        Tracking: +15u<br>
+        Line-height: 1.1<br>
+        Class: Heading<br>
+        Base: DejaVu Sans Condensed<br>
+        Formats: TTF + WOFF2
+      </div>
+    </div>
+    <div class="spec-content">
+      <div class="spec-use-label">Section Titles · Card Headers · Navigation · Subheadings</div>
+      <div class="heading-specimen heading-xl">General Championship</div>
+      <div class="heading-specimen heading-lg">Athletics · Swimming · Football</div>
+      <div class="heading-specimen heading-md">Match Results — Week 3 — Autumn Term</div>
+      <div class="heading-specimen heading-sm">Men's Hostel League Table · 2024–25</div>
+    </div>
+  </div>
+
+  <!-- FONT 3: TEXT -->
+  <div class="spec-section">
+    <div class="spec-meta">
+      <div class="spec-number">03 / 05</div>
+      <div class="spec-name">IITB Sport<br>Text</div>
+      <div class="spec-detail">
+        Weight: 400 Regular<br>
+        Width: Normal<br>
+        Tracking: −4u<br>
+        Line-height: 1.72<br>
+        Class: Body<br>
+        Base: Lora Variable (Cyreal)<br>
+        Formats: TTF + WOFF2
+      </div>
+    </div>
+    <div class="spec-content">
+      <div class="spec-use-label">Articles · Match Reports · Editorial · Long-form</div>
+      <p class="text-specimen drop-cap">
+        In a thrilling finale that left the capacity crowd breathless, the IITB football team clinched the Inter-IIT gold medal in the final seconds of extra time. Captain Arjun Mehta's decisive header — his third of the tournament — sealed a 3–2 victory over a formidable IITK side that had dominated possession for much of the second half. The win marks the third consecutive Inter-IIT football gold for IITB, a record unmatched in the competition's forty-year history.
+      </p>
+      <p class="text-specimen" style="margin-top: 16px; font-size: 0.9rem; color: var(--muted); font-style: italic;">
+        The crowd erupted as the final whistle blew — a moment the players and staff will carry with them long after the trophy has been lifted and the confetti has settled on the turf of the Rajiv Gandhi Stadium.
+      </p>
+    </div>
+  </div>
+
+  <!-- FONT 4: MONO -->
+  <div class="spec-section">
+    <div class="spec-meta">
+      <div class="spec-number">04 / 05</div>
+      <div class="spec-name">IITB Sport<br>Mono</div>
+      <div class="spec-detail">
+        Weight: 700 Bold<br>
+        Width: Normal<br>
+        Tracking: −14u<br>
+        Line-height: 0.86<br>
+        Class: Monospace<br>
+        Base: Liberation Mono<br>
+        Formats: TTF + WOFF2
+      </div>
+    </div>
+    <div class="spec-content">
+      <div class="spec-use-label">Scoreboards · Stats Tables · Live Tickers · Timestamps</div>
+      <div class="mono-board">
+        <div class="mono-row header">
+          <div>#</div><div>Team</div><div>P</div><div>W</div><div>D</div><div>L</div><div>GD</div><div>Pts</div>
+        </div>
+        <div class="mono-row highlight">
+          <div class="pos">1</div><div class="team-col">IITB</div><div class="num">8</div><div class="num">7</div><div class="num">1</div><div class="num">0</div><div class="num">+14</div><div class="pts">22</div>
+        </div>
+        <div class="mono-row">
+          <div class="pos">2</div><div class="team-col">IITD</div><div class="num">8</div><div class="num">5</div><div class="num">1</div><div class="num">2</div><div class="num">+7</div><div class="pts">16</div>
+        </div>
+        <div class="mono-row">
+          <div class="pos">3</div><div class="team-col">IITK</div><div class="num">8</div><div class="num">4</div><div class="num">2</div><div class="num">2</div><div class="num">+4</div><div class="pts">14</div>
+        </div>
+        <div class="mono-row">
+          <div class="pos">4</div><div class="team-col">IITM</div><div class="num">8</div><div class="num">3</div><div class="num">1</div><div class="num">4</div><div class="num">−2</div><div class="pts">10</div>
+        </div>
+        <div class="mono-row">
+          <div class="pos">5</div><div class="team-col">IITR</div><div class="num">8</div><div class="num">0</div><div class="num">1</div><div class="num">7</div><div class="num">−12</div><div class="pts">1</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FONT 5: CAPTION -->
+  <div class="spec-section">
+    <div class="spec-meta">
+      <div class="spec-number">05 / 05</div>
+      <div class="spec-name">IITB Sport<br>Caption</div>
+      <div class="spec-detail">
+        Weight: 300 Light<br>
+        Width: Normal<br>
+        Tracking: +10u<br>
+        Line-height: 1.4<br>
+        Class: Label / UI<br>
+        Base: Poppins Light<br>
+        Formats: TTF + WOFF2
+      </div>
+    </div>
+    <div class="spec-content">
+      <div class="spec-use-label">Labels · Tags · Photo Credits · Metadata · UI Badges</div>
+      <div class="caption-showcase">
+        <div class="caption-card">
+          <div class="caption-dot"></div>
+          <div>
+            <div class="caption-label">Live Now — Football · Hostel 5 vs Hostel 10 · Main Ground</div>
+            <div class="caption-tag">Kick-off 17:30 IST · Referee: R. Sharma · Inter-Hostel League</div>
+          </div>
+        </div>
+        <div class="caption-card">
+          <div class="caption-dot muted"></div>
+          <div>
+            <div class="caption-label">Photo: Aryan Kapoor · Sports Photography Club IITB</div>
+            <div class="caption-tag">Canon EOS R5 · 85mm f/1.4 · General Championship 2025</div>
+          </div>
+        </div>
+      </div>
+      <div class="chips">
+        <div class="caption-chip active">⬤ Live</div>
+        <div class="caption-chip active">Football</div>
+        <div class="caption-chip">Basketball</div>
+        <div class="caption-chip">Athletics</div>
+        <div class="caption-chip">Swimming</div>
+        <div class="caption-chip">Chess</div>
+        <div class="caption-chip">GC 2025</div>
+        <div class="caption-chip">Inter-IIT</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- USAGE REFERENCE TABLE -->
+  <div class="usage-grid">
+    <div class="usage-cell">
+      <div class="usage-font-name">Display</div>
+      <div class="usage-role">Hero titles, event posters, team names, score overlays</div>
+      <div class="usage-example" style="font-family:'IITB Sport Display',sans-serif; font-size:2rem; line-height:0.92; text-transform:uppercase;">Match Day</div>
+    </div>
+    <div class="usage-cell">
+      <div class="usage-font-name">Heading</div>
+      <div class="usage-role">Section titles, card headers, nav items, subheadings</div>
+      <div class="usage-example" style="font-family:'IITB Sport Heading',sans-serif; font-size:1rem; text-transform:uppercase; letter-spacing:0.06em;">Athletics Results</div>
+    </div>
+    <div class="usage-cell">
+      <div class="usage-font-name">Text</div>
+      <div class="usage-role">Articles, match reports, editorial, long-form copy</div>
+      <div class="usage-example" style="font-family:'IITB Sport Text',serif; font-size:0.85rem; line-height:1.7; color:#9e8880;">A historic performance sealed gold for IITB in front of thousands...</div>
+    </div>
+    <div class="usage-cell">
+      <div class="usage-font-name">Mono</div>
+      <div class="usage-role">Scoreboards, stats, tickers, timestamps, data tables</div>
+      <div class="usage-example" style="font-family:'IITB Sport Mono',monospace; font-size:1.4rem; color:var(--copper); font-variant-numeric:tabular-nums; letter-spacing:0.05em;">74 : 68</div>
+    </div>
+    <div class="usage-cell">
+      <div class="usage-font-name">Caption</div>
+      <div class="usage-role">Labels, tags, photo credits, badges, UI metadata</div>
+      <div class="usage-example" style="font-family:'IITB Sport Caption',sans-serif; font-size:0.58rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted);">Photo Credit · Sports Club IITB</div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-copy">© 2025 IIT Bombay Sports · Custom Font Family v1.0 · For internal digital use only</div>
+  <div class="footer-copy">5 Typefaces · 10 Files (TTF + WOFF2) · Specimen Sheet</div>
+</footer>
+
+</body>
+</html>

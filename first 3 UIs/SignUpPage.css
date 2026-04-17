@@ -26,7 +26,7 @@
   --color-text-muted:     #6B7A99;
   --color-text-disabled:  #A0A9B8;
 
-  --font-sans: var(--font-body);
+  --font-sans: var(--font-heading);
   --font-mono: var(--font-data);
 
   --radius-sm:   6px;
@@ -43,7 +43,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   padding: 32px 16px;
 }
 
@@ -128,7 +128,7 @@
   border-radius: var(--radius-md);
   padding: 0 12px;
   font-size: 14px;
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   color: var(--color-text-primary);
   background: #FFFFFF;
   outline: none;
@@ -171,7 +171,7 @@
   border-radius: var(--radius-md);
   font-size: 13px;
   font-weight: 600;
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   cursor: pointer;
   transition: background 0.15s;
 }

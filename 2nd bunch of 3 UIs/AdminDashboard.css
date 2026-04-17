@@ -25,7 +25,7 @@
   --color-text-muted: #6b7a99;
   --color-text-disabled: #a0a9b8;
 
-  --font-sans: var(--font-body);
+  --font-sans: var(--font-heading);
   --font-mono: var(--font-data);
 
   --radius-sm: 6px;
@@ -43,7 +43,7 @@
 }
 
 body {
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   background: var(--color-surface);
   color: var(--color-text-body);
   -webkit-font-smoothing: antialiased;
@@ -206,7 +206,7 @@ body {
   border-top: none;
   border-right: none;
   border-bottom: none;
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   text-decoration: none;
   width: 100%;
   text-align: left;
@@ -346,7 +346,7 @@ body {
   background: transparent;
   border: none;
   cursor: pointer;
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   transition: all 0.15s;
   display: inline-flex;
   align-items: center;
@@ -535,7 +535,7 @@ body {
   height: 38px;
   padding: 0 18px;
   border-radius: var(--radius-md);
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
@@ -556,7 +556,7 @@ body {
   height: 38px;
   padding: 0 16px;
   border-radius: var(--radius-md);
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;
@@ -578,7 +578,7 @@ body {
   height: 36px;
   padding: 0 16px;
   border-radius: var(--radius-md);
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;
@@ -605,7 +605,7 @@ body {
   height: 34px;
   padding: 0 12px;
   border-radius: var(--radius-sm);
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;
@@ -820,7 +820,7 @@ body {
   border-radius: var(--radius-md);
   padding: 10px 12px;
   font-size: 14px;
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   color: var(--color-text-primary);
   background: #fff;
   outline: none;

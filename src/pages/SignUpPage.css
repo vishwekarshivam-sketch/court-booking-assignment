@@ -14,7 +14,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   padding: 24px;
   padding-top: 56px;
   position: relative;
@@ -52,7 +52,7 @@
 
 .auth-bg-number {
   position: absolute;
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-weight: 800;
   font-size: clamp(180px, 30vw, 360px);
   color: #1a2744;
@@ -88,7 +88,7 @@
 }
 
 .auth-eyebrow {
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 2px;
@@ -98,7 +98,7 @@
 }
 
 .auth-logo { font-family: var(--font-display) !important;
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: 28px;
   font-weight: 800;
   letter-spacing: -1px;
@@ -120,8 +120,8 @@
   margin-bottom: 8px;
 }
 
-.auth-tagline { font-family: var(--font-body);
-  font-family: var(--font-body);
+.auth-tagline { font-family: var(--font-heading);
+  font-family: var(--font-heading);
   font-size: 14px;
   color: #475569;
   margin-bottom: 32px;
@@ -148,7 +148,7 @@
   border: 1.5px solid #e2e8f0;
   border-radius: 8px;
   color: #0f172a;
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: 14px;
   padding: 11px 14px;
   outline: none;
@@ -234,7 +234,7 @@
   margin-top: 24px;
   padding-top: 20px;
   border-top: 1px solid #e2e8f0;
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: 13px;
   color: #475569;
   text-align: center;

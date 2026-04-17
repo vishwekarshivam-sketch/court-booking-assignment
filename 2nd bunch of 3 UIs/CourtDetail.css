@@ -33,7 +33,7 @@
   --color-rejected-bg: #ffe8e8;
   --color-rejected-text: #8a1a1a;
 
-  --font-sans: var(--font-body);
+  --font-sans: var(--font-heading);
   --font-mono: var(--font-data);
 
   --radius-sm: 6px;
@@ -51,7 +51,7 @@
 }
 
 body {
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   background: var(--color-surface);
   color: var(--color-text-body);
   -webkit-font-smoothing: antialiased;
@@ -327,7 +327,7 @@ body {
   border: 1.5px solid var(--color-border);
   background: var(--color-card);
   cursor: pointer;
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   transition: border-color 0.15s, background 0.15s, color 0.15s;
   min-width: 72px;
 }
@@ -370,7 +370,7 @@ body {
   cursor: pointer;
   background: var(--color-card);
   transition: border-color 0.15s, background 0.15s;
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -483,7 +483,7 @@ body {
   height: 38px;
   padding: 0 18px;
   border-radius: var(--radius-md);
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
@@ -513,7 +513,7 @@ body {
   height: 38px;
   padding: 0 18px;
   border-radius: var(--radius-md);
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
@@ -534,7 +534,7 @@ body {
   height: 34px;
   padding: 0 12px;
   border-radius: var(--radius-sm);
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;

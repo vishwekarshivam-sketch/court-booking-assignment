@@ -5,7 +5,7 @@
 .page-root { font-family: var(--font-heading);
   min-height: 100vh;
   background: #fafafa;
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
 }
 
 /* ── Stat strip ─────────────────────────────────────────── */
@@ -59,7 +59,7 @@
 
 /* ── Page hero ──────────────────────────────────────────── */
 .page-eyebrow { font-family: var(--font-display);
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 2px;
@@ -166,7 +166,7 @@
 
 .court-card__bg-num {
   position: absolute;
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-weight: 800;
   font-size: 80px;
   color: #0f172a;
@@ -242,7 +242,7 @@
 }
 
 .court-card__btn {
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: 13px;
   font-weight: 700;
   border-radius: 8px;
@@ -291,7 +291,7 @@
 }
 
 .empty-state__body {
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: 14px;
   color: #94a3b8;
 }
@@ -321,7 +321,7 @@
   align-items: center;
   justify-content: center;
   margin-top: 12px;
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: 13px;
   font-weight: 700;
   padding: 8px 20px;

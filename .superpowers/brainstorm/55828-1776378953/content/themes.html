@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Theme Concepts</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, sans-serif; background: #0f0f13; color: #e0e0e0; padding: 24px; }
+
+  h1 { text-align: center; font-size: 1.5rem; color: #fff; margin-bottom: 6px; }
+  .subtitle { text-align: center; color: #888; margin-bottom: 32px; font-size: 0.9rem; }
+
+  .themes { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 1400px; margin: 0 auto; }
+
+  .theme-panel { border-radius: 16px; overflow: hidden; cursor: pointer; border: 2px solid transparent; transition: border-color 0.2s, transform 0.2s; }
+  .theme-panel:hover { transform: translateY(-2px); }
+  .theme-panel.selected { border-color: #a78bfa; }
+
+  .theme-label { text-align: center; padding: 12px; font-weight: 700; font-size: 1rem; }
+
+  /* ── THEME A: Midnight Sport ─────────────────────────── */
+  .theme-a { background: #0d0d14; }
+  .theme-a .theme-label { background: #0d0d14; color: #e879f9; font-family: 'Georgia', serif; }
+
+  .ta-navbar { background: #0d0d14; border-bottom: 1px solid #2a1a3e; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; }
+  .ta-logo { font-family: 'Georgia', serif; font-size: 1.1rem; font-style: italic; color: #fff; }
+  .ta-logo span { color: #e879f9; }
+  .ta-links { display: flex; gap: 16px; }
+  .ta-link { font-size: 0.72rem; color: #888; text-transform: uppercase; letter-spacing: 0.1em; }
+  .ta-link.active { color: #e879f9; border-bottom: 1px solid #e879f9; padding-bottom: 2px; }
+  .ta-avatar { width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg, #e879f9, #6d28d9); display: flex; align-items: center; justify-content: center; font-size: 0.65rem; color: #fff; font-weight: 700; }
+
+  .ta-hero { background: linear-gradient(135deg, #13001a 0%, #1a0030 50%, #0d001a 100%); padding: 24px 20px 16px; position: relative; overflow: hidden; }
+  .ta-hero::before { content: ''; position: absolute; top: -40px; right: -40px; width: 180px; height: 180px; background: radial-gradient(circle, rgba(232,121,249,0.15) 0%, transparent 70%); border-radius: 50%; }
+  .ta-hero-tag { display: inline-block; background: rgba(232,121,249,0.15); border: 1px solid rgba(232,121,249,0.3); color: #e879f9; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.12em; padding: 3px 10px; border-radius: 999px; margin-bottom: 10px; }
+  .ta-hero-title { font-family: 'Georgia', serif; font-size: 1.6rem; font-style: italic; color: #fff; line-height: 1.2; margin-bottom: 6px; }
+  .ta-hero-title span { color: #e879f9; }
+  .ta-hero-sub { font-size: 0.72rem; color: #9ca3af; line-height: 1.5; margin-bottom: 16px; }
+  .ta-btn { display: inline-block; background: linear-gradient(135deg, #e879f9, #a855f7); color: #fff; font-size: 0.75rem; font-weight: 600; padding: 8px 18px; border-radius: 6px; border: none; }
+
+  .ta-tabs { display: flex; gap: 0; padding: 12px 20px 0; border-bottom: 1px solid #1e1e2e; }
+  .ta-tab { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; padding: 6px 14px; color: #555; border-bottom: 2px solid transparent; }
+  .ta-tab.active { color: #e879f9; border-bottom-color: #e879f9; }
+
+  .ta-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 14px 20px; }
+  .ta-card { background: #13131f; border: 1px solid #2a1a3e; border-radius: 10px; overflow: hidden; }
+  .ta-card-img { height: 52px; position: relative; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; }
+  .ta-card-img.bad { background: linear-gradient(135deg, #1a0030, #2d0050); }
+  .ta-card-img.sq  { background: linear-gradient(135deg, #001a30, #002d50); }
+  .ta-card-img.ten { background: linear-gradient(135deg, #1a1500, #302800); }
+  .ta-card-body { padding: 8px 10px 6px; }
+  .ta-card-name { font-size: 0.7rem; font-weight: 600; color: #e0e0e0; margin-bottom: 3px; }
+  .ta-card-sport { font-size: 0.6rem; color: #e879f9; text-transform: uppercase; letter-spacing: 0.08em; }
+  .ta-card-footer { padding: 6px 10px; border-top: 1px solid #1e1e2e; display: flex; justify-content: space-between; align-items: center; }
+  .ta-dot { width: 6px; height: 6px; border-radius: 50%; background: #34d399; }
+  .ta-avail { font-size: 0.6rem; color: #34d399; }
+  .ta-btn-sm { font-size: 0.6rem; background: transparent; border: 1px solid #e879f9; color: #e879f9; padding: 3px 8px; border-radius: 4px; }
+
+  /* ── THEME B: Lush Clay Court ────────────────────────── */
+  .theme-b { background: #fdf6ee; }
+  .theme-b .theme-label { background: #fdf6ee; color: #b45309; font-family: 'Trebuchet MS', sans-serif; letter-spacing: 0.05em; }
+
+  .tb-navbar { background: #c2410c; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; }
+  .tb-logo { font-family: 'Trebuchet MS', sans-serif; font-size: 1rem; font-weight: 700; color: #fff; letter-spacing: 0.05em; text-transform: uppercase; }
+  .tb-logo span { color: #fcd34d; }
+  .tb-links { display: flex; gap: 16px; }
+  .tb-link { font-size: 0.7rem; color: rgba(255,255,255,0.65); font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; }
+  .tb-link.active { color: #fcd34d; }
+  .tb-avatar { width: 30px; height: 30px; border-radius: 6px; background: #fcd34d; display: flex; align-items: center; justify-content: center; font-size: 0.65rem; color: #92400e; font-weight: 700; }
+
+  .tb-hero { background: linear-gradient(160deg, #7c2d12 0%, #c2410c 60%, #ea580c 100%); padding: 24px 20px 16px; position: relative; overflow: hidden; }
+  .tb-hero::after { content: '◉'; position: absolute; right: 16px; top: 12px; font-size: 3.5rem; color: rgba(255,255,255,0.06); }
+  .tb-hero-eyebrow { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: #fcd34d; margin-bottom: 8px; }
+  .tb-hero-title { font-family: 'Trebuchet MS', sans-serif; font-size: 1.5rem; font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.02em; }
+  .tb-hero-sub { font-size: 0.72rem; color: rgba(255,255,255,0.7); line-height: 1.5; margin-bottom: 16px; }
+  .tb-btns { display: flex; gap: 8px; }
+  .tb-btn-primary { background: #fcd34d; color: #92400e; font-size: 0.72rem; font-weight: 700; padding: 8px 16px; border-radius: 4px; border: none; text-transform: uppercase; letter-spacing: 0.06em; }
+  .tb-btn-outline { background: transparent; color: #fff; font-size: 0.72rem; font-weight: 600; padding: 7px 14px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.4); }
+
+  .tb-content { padding: 14px 20px; background: #fdf6ee; }
+  .tb-section-label { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #9a3412; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+  .tb-section-label::after { content: ''; flex: 1; height: 1px; background: #fed7aa; }
+
+  .tb-tabs { display: flex; gap: 6px; margin-bottom: 12px; }
+  .tb-tab { font-size: 0.68rem; font-weight: 600; padding: 5px 12px; border-radius: 4px; background: #fee2d5; color: #9a3412; text-transform: uppercase; letter-spacing: 0.06em; }
+  .tb-tab.active { background: #c2410c; color: #fff; }
+
+  .tb-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .tb-card { background: #fff; border: 1px solid #fed7aa; border-radius: 8px; overflow: hidden; }
+  .tb-card-img { height: 52px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; }
+  .tb-card-img.bad { background: #d1fae5; }
+  .tb-card-img.sq  { background: #dbeafe; }
+  .tb-card-img.ten { background: #fef3c7; }
+  .tb-card-body { padding: 8px 10px 4px; }
+  .tb-card-name { font-size: 0.7rem; font-weight: 700; color: #1c1917; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 3px; }
+  .tb-card-sport { font-size: 0.6rem; color: #c2410c; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
+  .tb-card-footer { padding: 6px 10px; border-top: 1px solid #fef0e6; display: flex; justify-content: space-between; align-items: center; }
+  .tb-dot { width: 6px; height: 6px; border-radius: 50%; background: #16a34a; }
+  .tb-avail { font-size: 0.6rem; color: #15803d; font-weight: 600; }
+  .tb-btn-sm { font-size: 0.6rem; background: #c2410c; color: #fff; padding: 3px 8px; border-radius: 3px; font-weight: 700; border: none; text-transform: uppercase; letter-spacing: 0.05em; }
+
+  /* Selection */
+  .selection-bar { text-align: center; margin-top: 24px; font-size: 0.85rem; color: #666; }
+  .theme-panel.selected .theme-label { position: relative; }
+  .theme-panel.selected .theme-label::after { content: ' ✓ Selected'; color: #a78bfa; }
+  .select-hint { text-align: center; color: #666; font-size: 0.8rem; margin-bottom: 16px; }
+
+  /* Font badges */
+  .font-badge { display: inline-block; font-size: 0.6rem; padding: 2px 8px; border-radius: 999px; margin: 0 3px; }
+  .badge-a { background: rgba(232,121,249,0.15); color: #e879f9; border: 1px solid rgba(232,121,249,0.3); }
+  .badge-b { background: #fed7aa; color: #92400e; border: 1px solid #fdba74; }
+  .meta { text-align: center; margin-bottom: 28px; }
+</style>
+</head>
+<body>
+<h1>Two UI Theme Concepts</h1>
+<p class="subtitle">Court Booking System — pick your preferred direction</p>
+
+<div class="meta">
+  <span class="font-badge badge-a">A: Georgia (serif) + Inter</span>
+  &nbsp;&nbsp;&nbsp;
+  <span class="font-badge badge-b">B: Trebuchet MS + system-ui</span>
+</div>
+
+<p class="select-hint">Click a theme to select it, then let me know in the terminal.</p>
+
+<div class="themes">
+
+  <!-- THEME A -->
+  <div class="theme-panel theme-a" onclick="this.classList.toggle('selected')" data-choice="a">
+    <div class="theme-label">A — "Midnight Sport" &nbsp; Dark · Violet/Magenta · Italic Serif</div>
+
+    <!-- Navbar -->
+    <div class="ta-navbar">
+      <div class="ta-logo">Court<span>Book</span></div>
+      <div class="ta-links">
+        <div class="ta-link active">Courts</div>
+        <div class="ta-link">My Bookings</div>
+      </div>
+      <div class="ta-avatar">SV</div>
+    </div>
+
+    <!-- Hero -->
+    <div class="ta-hero">
+      <div class="ta-hero-tag">IIT Bombay Sports Complex</div>
+      <div class="ta-hero-title">Book Your <span>Court.</span><br>Play Your Game.</div>
+      <div class="ta-hero-sub">Reserve badminton, squash & tennis courts<br>instantly — no queues, no hassle.</div>
+      <button class="ta-btn">Browse Courts →</button>
+    </div>
+
+    <!-- Tabs -->
+    <div class="ta-tabs">
+      <div class="ta-tab active">All Courts</div>
+      <div class="ta-tab">Badminton</div>
+      <div class="ta-tab">Squash</div>
+      <div class="ta-tab">Tennis</div>
+    </div>
+
+    <!-- Cards -->
+    <div class="ta-cards">
+      <div class="ta-card">
+        <div class="ta-card-img bad">🏸</div>
+        <div class="ta-card-body">
+          <div class="ta-card-name">Badminton Court 1</div>
+          <div class="ta-card-sport">Badminton</div>
+        </div>
+        <div class="ta-card-footer">
+          <div style="display:flex;align-items:center;gap:4px"><div class="ta-dot"></div><div class="ta-avail">Available</div></div>
+          <div class="ta-btn-sm">Book</div>
+        </div>
+      </div>
+      <div class="ta-card">
+        <div class="ta-card-img sq">🎾</div>
+        <div class="ta-card-body">
+          <div class="ta-card-name">Squash Court A</div>
+          <div class="ta-card-sport">Squash</div>
+        </div>
+        <div class="ta-card-footer">
+          <div style="display:flex;align-items:center;gap:4px"><div class="ta-dot"></div><div class="ta-avail">Available</div></div>
+          <div class="ta-btn-sm">Book</div>
+        </div>
+      </div>
+      <div class="ta-card">
+        <div class="ta-card-img ten">🎾</div>
+        <div class="ta-card-body">
+          <div class="ta-card-name">Tennis Court 1</div>
+          <div class="ta-card-sport">Tennis</div>
+        </div>
+        <div class="ta-card-footer">
+          <div style="display:flex;align-items:center;gap:4px"><div class="ta-dot" style="background:#ef4444"></div><div class="ta-avail" style="color:#ef4444">Full</div></div>
+          <div class="ta-btn-sm" style="opacity:0.4">Book</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="padding:10px 20px 16px">
+      <div style="font-size:0.62rem;color:#555;line-height:1.6">
+        <strong style="color:#e879f9">Palette:</strong> #0d0d14 bg · #e879f9 accent · #a855f7 secondary<br>
+        <strong style="color:#e879f9">Fonts:</strong> Georgia italic (headings) · Inter (body)<br>
+        <strong style="color:#e879f9">Layout:</strong> Hero banner · dark cards · glow effects
+      </div>
+    </div>
+  </div>
+
+  <!-- THEME B -->
+  <div class="theme-panel theme-b" onclick="this.classList.toggle('selected')" data-choice="b">
+    <div class="theme-label">B — "Clay Court" &nbsp; Warm · Burnt Orange/Amber · Bold Sans</div>
+
+    <!-- Navbar -->
+    <div class="tb-navbar">
+      <div class="tb-logo">Court<span>Book</span></div>
+      <div class="tb-links">
+        <div class="tb-link active">Courts</div>
+        <div class="tb-link">My Bookings</div>
+      </div>
+      <div class="tb-avatar">SV</div>
+    </div>
+
+    <!-- Hero -->
+    <div class="tb-hero">
+      <div class="tb-hero-eyebrow">⚡ IIT Bombay Sports Complex</div>
+      <div class="tb-hero-title">Reserve.<br>Show Up.<br>Win.</div>
+      <div class="tb-hero-sub">Book badminton, squash & tennis courts in seconds.<br>Real-time availability. Instant confirmation.</div>
+      <div class="tb-btns">
+        <button class="tb-btn-primary">Book a Court</button>
+        <button class="tb-btn-outline">View Schedule</button>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="tb-content">
+      <div class="tb-section-label">Available Courts</div>
+      <div class="tb-tabs">
+        <div class="tb-tab active">All</div>
+        <div class="tb-tab">Badminton</div>
+        <div class="tb-tab">Squash</div>
+        <div class="tb-tab">Tennis</div>
+      </div>
+
+      <div class="tb-cards">
+        <div class="tb-card">
+          <div class="tb-card-img bad">🏸</div>
+          <div class="tb-card-body">
+            <div class="tb-card-name">Badminton Court 1</div>
+            <div class="tb-card-sport">Badminton</div>
+          </div>
+          <div class="tb-card-footer">
+            <div style="display:flex;align-items:center;gap:4px"><div class="tb-dot"></div><div class="tb-avail">Open</div></div>
+            <div class="tb-btn-sm">BOOK</div>
+          </div>
+        </div>
+        <div class="tb-card">
+          <div class="tb-card-img sq">🎾</div>
+          <div class="tb-card-body">
+            <div class="tb-card-name">Squash Court A</div>
+            <div class="tb-card-sport">Squash</div>
+          </div>
+          <div class="tb-card-footer">
+            <div style="display:flex;align-items:center;gap:4px"><div class="tb-dot"></div><div class="tb-avail">Open</div></div>
+            <div class="tb-btn-sm">BOOK</div>
+          </div>
+        </div>
+        <div class="tb-card">
+          <div class="tb-card-img ten">🎾</div>
+          <div class="tb-card-body">
+            <div class="tb-card-name">Tennis Court 1</div>
+            <div class="tb-card-sport">Tennis</div>
+          </div>
+          <div class="tb-card-footer">
+            <div style="display:flex;align-items:center;gap:4px"><div class="tb-dot" style="background:#dc2626"></div><div class="tb-avail" style="color:#dc2626">Full</div></div>
+            <div class="tb-btn-sm" style="opacity:0.4">BOOK</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="padding:10px 20px 16px;background:#fdf6ee">
+      <div style="font-size:0.62rem;color:#78350f;line-height:1.6">
+        <strong style="color:#c2410c">Palette:</strong> #fdf6ee bg · #c2410c primary · #fcd34d accent<br>
+        <strong style="color:#c2410c">Fonts:</strong> Trebuchet MS bold caps (headings) · system-ui (body)<br>
+        <strong style="color:#c2410c">Layout:</strong> Full-bleed hero · warm cards · high contrast
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// Simple selection toggle — panels handle their own selected state via onclick
+</script>
+</body>
+</html>

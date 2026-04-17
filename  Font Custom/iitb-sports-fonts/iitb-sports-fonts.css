@@ -1,0 +1,171 @@
+/* ============================================================
+   IITB Sports Font Family — CSS Reference
+   Version 1.0 | IIT Bombay Sports 2025
+   Palette: #C4622D (copper), #2C2420 (charcoal), #0A0807 (black)
+   ============================================================ */
+
+/* ── Font Face Declarations ── */
+
+@font-face {
+  font-family: "IITB Sport Display";
+  src: url("IITBSport-Display.woff2") format("woff2"),
+       url("IITBSport-Display.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IITB Sport Heading";
+  src: url("IITBSport-Heading.woff2") format("woff2"),
+       url("IITBSport-Heading.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IITB Sport Text";
+  src: url("IITBSport-Text.woff2") format("woff2"),
+       url("IITBSport-Text.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IITB Sport Mono";
+  src: url("IITBSport-Mono.woff2") format("woff2"),
+       url("IITBSport-Mono.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IITB Sport Caption";
+  src: url("IITBSport-Caption.woff2") format("woff2"),
+       url("IITBSport-Caption.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* ── Token System ── */
+
+:root {
+  /* Fonts */
+  --font-display:  "IITB Sport Display",  "Arial Narrow", sans-serif;
+  --font-heading:  "IITB Sport Heading",  "Arial Narrow", sans-serif;
+  --font-text:     "IITB Sport Text",     Georgia, serif;
+  --font-mono:     "IITB Sport Mono",     "Courier New", monospace;
+  --font-caption:  "IITB Sport Caption",  system-ui, sans-serif;
+
+  /* Palette */
+  --color-copper:    #C4622D;
+  --color-copper-lt: #D97B46;
+  --color-copper-dk: #9E4C22;
+  --color-charcoal:  #2C2420;
+  --color-black:     #0A0807;
+  --color-white:     #F5F1EC;
+  --color-muted:     #8C7B72;
+}
+
+
+/* ── Utility Classes ── */
+
+/* Display — hero headlines, event banners, team names */
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  line-height: 0.95;
+}
+
+/* Heading — section titles, card headers, nav */
+.font-heading {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+/* Text — article body, match reports, editorial */
+.font-text {
+  font-family: var(--font-text);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.65;
+}
+
+/* Mono — scoreboards, stats, live tickers, timestamps */
+.font-mono {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+}
+
+/* Caption — labels, tags, photo credits, metadata */
+.font-caption {
+  font-family: var(--font-caption);
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+
+/* ── Semantic Usage Examples ── */
+
+/* Hero section */
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 10vw, 9rem);
+  font-weight: 800;
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+
+/* Live score board */
+.score-value {
+  font-family: var(--font-mono);
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-copper);
+  letter-spacing: 0.05em;
+}
+
+/* Team name chip */
+.team-name {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+
+/* Article body */
+.article-body {
+  font-family: var(--font-text);
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  line-height: 1.7;
+  color: var(--color-white);
+  max-width: 68ch;
+}
+
+/* Photo credit / badge label */
+.label-tag {
+  font-family: var(--font-caption);
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}

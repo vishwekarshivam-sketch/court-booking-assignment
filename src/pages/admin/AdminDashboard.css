@@ -6,7 +6,7 @@
 .page-bg {
   min-height: 100vh;
   background: #fafafa;
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
 }
 
 /* ── Admin layout ───────────────────────────────────────── */
@@ -26,7 +26,7 @@
 }
 
 .sidebar-section-label {
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 2px;
@@ -40,7 +40,7 @@
   align-items: center;
   gap: 10px;
   padding: 10px 20px;
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: 13px;
   font-weight: 600;
   color: #475569;
@@ -92,7 +92,7 @@
 }
 
 .page-eyebrow {
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 2px;
@@ -114,8 +114,8 @@
   color: #1a2744;
 }
 
-.page-subtitle { font-family: var(--font-body);
-  font-family: var(--font-body);
+.page-subtitle { font-family: var(--font-heading);
+  font-family: var(--font-heading);
   font-size: 14px;
   color: #475569;
   margin-top: 8px;
@@ -293,7 +293,7 @@
 }
 
 .user-name {
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: 13px;
   font-weight: 600;
   color: #0f172a;
@@ -301,7 +301,7 @@
 }
 
 .court-cell-name {
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: 13px;
   font-weight: 600;
   color: #0f172a;
@@ -380,7 +380,7 @@
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: 12px;
   font-weight: 700;
   padding: 6px 12px;
@@ -402,7 +402,7 @@
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: 12px;
   font-weight: 700;
   padding: 6px 12px;
@@ -498,8 +498,8 @@
   color: #94a3b8;
 }
 
-.empty-body { font-family: var(--font-body);
-  font-family: var(--font-body);
+.empty-body { font-family: var(--font-heading);
+  font-family: var(--font-heading);
   font-size: 13px;
   color: #94a3b8;
 }
@@ -577,8 +577,8 @@
   margin-bottom: 4px;
 }
 
-.modal-subtitle { font-family: var(--font-body);
-  font-family: var(--font-body);
+.modal-subtitle { font-family: var(--font-heading);
+  font-family: var(--font-heading);
   font-size: 13px;
   color: #475569;
 }
@@ -612,7 +612,7 @@
 }
 
 .summary-value {
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: 13px;
   font-weight: 600;
   color: #0f172a;
@@ -653,7 +653,7 @@
   border: 1.5px solid #e2e8f0;
   border-radius: 8px;
   padding: 10px 12px;
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: 14px;
   color: #0f172a;
   outline: none;

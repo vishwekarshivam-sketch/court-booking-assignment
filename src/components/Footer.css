@@ -17,7 +17,7 @@
 }
 
 .site-footer__logo {
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: 20px;
   font-weight: 800;
   letter-spacing: -0.5px;
@@ -37,7 +37,7 @@
 }
 
 .site-footer__nav-link {
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: 14px;
   font-weight: 500;
   color: #475569;
@@ -67,7 +67,7 @@
 }
 
 .site-footer__copy {
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: 13px;
   font-weight: 400;
   color: #94a3b8;

@@ -76,7 +76,7 @@
 }
 
 .hero-sub {
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: 15px;
   font-weight: 400;
   color: rgba(255,255,255,0.7);

@@ -34,7 +34,7 @@
   --color-tennis-bg:      #FFF3D6;
   --color-tennis-text:    #7A5000;
 
-  --font-sans: var(--font-body);
+  --font-sans: var(--font-heading);
   --font-mono: var(--font-data);
 
   --radius-sm:   6px;
@@ -52,7 +52,7 @@
 .page-root {
   min-height: 100vh;
   background-color: var(--color-surface);
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
 }
 
 /* ─── Navbar ─────────────────────────────────────────────── */
@@ -198,7 +198,7 @@
   border-radius: 7px;
   font-size: 13px;
   font-weight: 500;
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   color: var(--color-text-muted);
   background: transparent;
   border: none;
@@ -351,7 +351,7 @@
   border-radius: var(--radius-md);
   font-size: 13px;
   font-weight: 600;
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   cursor: pointer;
   transition: background 0.15s;
 }
@@ -373,7 +373,7 @@
   border-radius: var(--radius-md);
   font-size: 13px;
   font-weight: 500;
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   cursor: pointer;
   transition: border-color 0.15s, background 0.15s;
 }

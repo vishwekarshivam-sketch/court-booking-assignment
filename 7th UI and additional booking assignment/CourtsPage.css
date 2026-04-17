@@ -38,17 +38,17 @@
   --radius-xl:   12px;
   --radius-full: 9999px;
 
-  --font-sans: var(--font-body);
+  --font-sans: var(--font-heading);
   --font-mono: var(--font-data);
 }
 
 /* ─── Reset ─────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-button { font-family: var(--font-body); cursor: pointer; }
+button { font-family: var(--font-heading); cursor: pointer; }
 
 /* ─── Root ───────────────────────────────────────────────── */
 .cb-root {
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   background: var(--color-surface);
   min-height: 100vh;
   color: var(--color-text-primary);

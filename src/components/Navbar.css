@@ -7,7 +7,7 @@
   height: 60px;
   background: #ffffff;
   border-bottom: 1px solid #e2e8f0;
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
 }
 
 .navbar-inner {
@@ -28,7 +28,7 @@
 
 /* Logo */
 .logo { font-family: var(--font-display) !important;
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: 20px;
   font-weight: 800;
   letter-spacing: -0.5px;
@@ -96,7 +96,7 @@
 }
 
 .nav-name { font-family: var(--font-display) !important;
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: 13px;
   font-weight: 500;
   color: #475569;
@@ -169,7 +169,7 @@
 }
 
 .user-dropdown__name { font-family: var(--font-display) !important;
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: 13px;
   font-weight: 700;
   color: #0f172a;
@@ -204,7 +204,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: 13px;
   font-weight: 500;
   text-align: left;
