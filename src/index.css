@@ -1,16 +1,95 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
-
-html {
-  font-size: 16px;
+/* @font-face declarations for IITB Sport Fonts */
+@font-face {
+  font-family: "IITB Sport Display";
+  src: url("/fonts/IITBSport-Display.woff2") format("woff2"),
+       url("/fonts/IITBSport-Display.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
 }
 
-body {
+@font-face {
+  font-family: "IITB Sport Heading";
+  src: url("/fonts/IITBSport-Heading.woff2") format("woff2"),
+       url("/fonts/IITBSport-Heading.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IITB Sport Text";
+  src: url("/fonts/IITBSport-Text.woff2") format("woff2"),
+       url("/fonts/IITBSport-Text.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IITB Sport Mono";
+  src: url("/fonts/IITBSport-Mono.woff2") format("woff2"),
+       url("/fonts/IITBSport-Mono.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IITB Sport Caption";
+  src: url("/fonts/IITBSport-Caption.woff2") format("woff2"),
+       url("/fonts/IITBSport-Caption.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --cb-bg-page:     #fafafa;
+  --cb-bg-surface:  #ffffff;
+  --cb-bg-alt:      #f4f6f9;
+
+  --cb-border:        #e2e8f0;
+  --cb-border-strong: #cbd5e1;
+  --cb-border-focus:  #1a2744;
+
+  --cb-text-primary:   #0f172a;
+  --cb-text-secondary: #475569;
+  --cb-text-muted:     #94a3b8;
+
+  --cb-accent:       #1a2744;
+  --cb-accent-hover: #243659;
+  --cb-accent-text:  #ffffff;
+
+  --cb-sport-badminton: #059669;
+  --cb-sport-squash:    #ea580c;
+  --cb-sport-tennis:    #7c3aed;
+
+  --cb-error:   #dc2626;
+  --cb-success: #16a34a;
+
+  /* Fonts */
+  --font-display:  "IITB Sport Display", "Arial Narrow", sans-serif;
+  --font-heading:  "IITB Sport Heading", "Arial Narrow", sans-serif;
+  --font-body:     "IITB Sport Text", Georgia, serif;
+  --font-data:     "IITB Sport Mono", "Courier New", monospace;
+  --font-caption:  "IITB Sport Caption", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  padding: 0;
+}
+
+html { font-size: 16px; }
+
+body {
+  background: var(--cb-bg-page);
+  font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
-  font-size: 1rem;
+  color: var(--cb-text-primary);
   min-height: 100vh;
-  width: 100%;
 }
 
 #root {
@@ -18,6 +97,14 @@ body {
   min-height: 100vh;
 }
 
-* {
-  box-sizing: border-box;
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 100px var(--cb-bg-surface) inset !important;
+  -webkit-text-fill-color: var(--cb-text-primary) !important;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }

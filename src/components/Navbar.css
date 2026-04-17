@@ -1,8 +1,82 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+/* Navbar */
 
-:root {
-  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Menlo', monospace;
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: 60px;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  font-family: var(--font-body);
+}
+
+.navbar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Logo */
+.logo {
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #0f172a;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.logo-accent {
+  color: #1a2744;
+}
+
+/* Nav links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: color 150ms, background 150ms;
+}
+
+.nav-link:hover {
+  color: #0f172a;
+  background: #f4f6f9;
+}
+
+.nav-link.active {
+  color: #1a2744;
+  background: #eef1f8;
+}
+
+/* Right side */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .navbar-user-btn {
@@ -12,26 +86,74 @@
   background: none;
   border: none;
   cursor: pointer;
-  padding: 6px 10px;
+  padding: 4px 8px;
   border-radius: 8px;
-  transition: background 0.15s;
+  transition: background 150ms;
 }
 
 .navbar-user-btn:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: #f4f6f9;
 }
 
+.nav-name {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: #475569;
+}
+
+.nav-admin-badge {
+  font-family: var(--font-data);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #1a2744;
+  background: #eef1f8;
+  border: 1px solid #cbd5e1;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+/* Avatar */
+.avatar {
+  width: 32px;
+  height: 32px;
+  background: #1a2744;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-data);
+  font-size: 11px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+
+.avatar.avatar-primary {
+  background: #1a2744;
+}
+
+.avatar-lg {
+  width: 36px;
+  height: 36px;
+  font-size: 12px;
+}
+
+/* Dropdown */
 .user-dropdown {
   position: absolute;
   top: calc(100% + 8px);
   right: 0;
   width: 240px;
-  background: #fff;
+  background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 10px;
-  box-shadow: 0 8px 24px rgba(15, 43, 82, 0.14);
   z-index: 200;
   overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
 }
 
 .user-dropdown__header {
@@ -39,6 +161,7 @@
   align-items: center;
   gap: 12px;
   padding: 16px;
+  border-bottom: 1px solid #e2e8f0;
 }
 
 .user-dropdown__info {
@@ -46,9 +169,10 @@
 }
 
 .user-dropdown__name {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #0f2b52;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  color: #0f172a;
   margin: 0 0 2px;
   white-space: nowrap;
   overflow: hidden;
@@ -56,8 +180,9 @@
 }
 
 .user-dropdown__email {
-  font-size: 12px;
-  color: #6b7a99;
+  font-family: var(--font-data);
+  font-size: 11px;
+  color: #94a3b8;
   margin: 0;
   white-space: nowrap;
   overflow: hidden;
@@ -75,33 +200,28 @@
   align-items: center;
   gap: 10px;
   width: 100%;
-  padding: 12px 16px;
+  padding: 11px 16px;
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 0.875rem;
+  font-family: var(--font-body);
+  font-size: 13px;
   font-weight: 500;
   text-align: left;
-  transition: background 0.12s;
-  color: #1a2b4a;
+  color: #475569;
+  transition: background 150ms, color 150ms;
 }
 
 .user-dropdown__item:hover {
-  background: #f5f7fc;
+  background: #f4f6f9;
+  color: #0f172a;
 }
 
 .user-dropdown__item--danger {
-  color: #c0392b;
+  color: #dc2626;
 }
 
 .user-dropdown__item--danger:hover {
-  background: #fff5f5;
-}
-
-.avatar-lg {
-  width: 40px;
-  height: 40px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  flex-shrink: 0;
+  background: #fef2f2;
+  color: #dc2626;
 }

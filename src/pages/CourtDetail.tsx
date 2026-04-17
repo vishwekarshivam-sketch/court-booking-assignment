@@ -12,6 +12,7 @@ import { useMakeBooking } from "../hooks/useMakeBooking";
 import { useAuth } from "../context/AuthContext";
 import { supabase } from "../lib/supabaseClient";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import "./CourtDetail.css";
 
 /* ─── Types ─────────────────────────────────────────────── */
@@ -147,13 +148,10 @@ function BookingConfirmModal({
             {submitting ? (
               <>
                 <span className="spinner" />
-                Submitting…
+                SUBMITTING
               </>
             ) : (
-              <>
-                <CheckCircle2 width={15} height={15} />
-                Submit Booking Request
-              </>
+              "CONFIRM BOOKING →"
             )}
           </button>
         </div>
@@ -206,7 +204,17 @@ export default function CourtDetail() {
     setTimeout(() => navigate('/my-bookings'), 2000);
   };
 
-  if (!court) return <div style={{ padding: '2rem' }}>Loading court details...</div>;
+  const SPORT_COLOR: Record<Sport, string> = {
+    badminton: "#059669",
+    squash:    "#ea580c",
+    tennis:    "#7c3aed",
+  };
+
+  if (!court) return (
+    <div style={{ minHeight: '100vh', background: '#0d0d0d', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: "var(--font-data)", fontSize: '11px', letterSpacing: '2px', textTransform: 'uppercase', color: '#444' }}>
+      Loading court…
+    </div>
+  );
 
   return (
     <div className="page-bg">
@@ -221,30 +229,63 @@ export default function CourtDetail() {
         </div>
 
         {/* ── Court Header ── */}
-        <div className="court-header-card">
-          <div className={`court-icon-zone ${court.sport}`}>
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+        <div className="court-header-card" style={{ "--sport-color": SPORT_COLOR[court.sport] } as React.CSSProperties}>
+          <div className="court-icon-zone">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
               {court.sport === "badminton" && (
-                <circle cx="20" cy="20" r="14" stroke="#1D7A4A" strokeWidth="2.5" fill="none" />
+                <>
+                  {/* cork — rounded base, tilted */}
+                  <path d="M5 24 Q4 30 9 32 Q15 34 16 29 L14 22 Q10 21 5 24 Z" stroke={SPORT_COLOR[court.sport]} strokeWidth="1.3" fill="none"/>
+                  {/* feather 1 — leftmost */}
+                  <path d="M11 23 Q8 15 13 6 Q16 10 14 20 Z" stroke={SPORT_COLOR[court.sport]} strokeWidth="1.2" fill="none"/>
+                  {/* feather 2 */}
+                  <path d="M13 22 Q12 13 19 5 Q22 9 18 19 Z" stroke={SPORT_COLOR[court.sport]} strokeWidth="1.2" fill="none"/>
+                  {/* feather 3 */}
+                  <path d="M15 21 Q18 12 25 6 Q27 11 21 18 Z" stroke={SPORT_COLOR[court.sport]} strokeWidth="1.2" fill="none"/>
+                  {/* feather 4 — rightmost */}
+                  <path d="M16 20 Q22 12 31 10 Q31 15 24 19 Z" stroke={SPORT_COLOR[court.sport]} strokeWidth="1.2" fill="none"/>
+                </>
               )}
               {court.sport === "squash" && (
-                <rect x="8" y="8" width="24" height="24" rx="3" stroke="#1A3A6B" strokeWidth="2.5" fill="none" />
+                <>
+                  {/* upright oval head */}
+                  <ellipse cx="18" cy="13" rx="8" ry="10" stroke={SPORT_COLOR[court.sport]} strokeWidth="1.4" fill="none"/>
+                  {/* vertical strings */}
+                  <line x1="13" y1="4"  x2="13" y2="22" stroke={SPORT_COLOR[court.sport]} strokeWidth="0.7" opacity="0.7"/>
+                  <line x1="18" y1="3"  x2="18" y2="23" stroke={SPORT_COLOR[court.sport]} strokeWidth="0.7" opacity="0.7"/>
+                  <line x1="23" y1="4"  x2="23" y2="22" stroke={SPORT_COLOR[court.sport]} strokeWidth="0.7" opacity="0.7"/>
+                  {/* horizontal strings */}
+                  <line x1="10" y1="9"  x2="26" y2="9"  stroke={SPORT_COLOR[court.sport]} strokeWidth="0.7" opacity="0.7"/>
+                  <line x1="10" y1="13" x2="26" y2="13" stroke={SPORT_COLOR[court.sport]} strokeWidth="0.7" opacity="0.7"/>
+                  <line x1="10" y1="17" x2="26" y2="17" stroke={SPORT_COLOR[court.sport]} strokeWidth="0.7" opacity="0.7"/>
+                  {/* throat */}
+                  <line x1="14" y1="23" x2="15" y2="26" stroke={SPORT_COLOR[court.sport]} strokeWidth="1.3"/>
+                  <line x1="22" y1="23" x2="21" y2="26" stroke={SPORT_COLOR[court.sport]} strokeWidth="1.3"/>
+                  {/* handle */}
+                  <line x1="15" y1="26" x2="14" y2="33" stroke={SPORT_COLOR[court.sport]} strokeWidth="2" strokeLinecap="round"/>
+                  <line x1="21" y1="26" x2="22" y2="33" stroke={SPORT_COLOR[court.sport]} strokeWidth="2" strokeLinecap="round"/>
+                  <line x1="14" y1="33" x2="22" y2="33" stroke={SPORT_COLOR[court.sport]} strokeWidth="1.5" strokeLinecap="round"/>
+                </>
               )}
               {court.sport === "tennis" && (
-                <circle cx="20" cy="20" r="14" stroke="#8A5E00" strokeWidth="2.5" fill="none" />
+                <>
+                  <circle cx="18" cy="18" r="10" stroke={SPORT_COLOR[court.sport]} strokeWidth="1.5" />
+                  <path d="M13 11Q18 18 13 25" stroke={SPORT_COLOR[court.sport]} strokeWidth="1.2" fill="none" />
+                  <path d="M23 11Q18 18 23 25" stroke={SPORT_COLOR[court.sport]} strokeWidth="1.2" fill="none" />
+                </>
               )}
             </svg>
           </div>
           <div className="court-header-body">
-            <h1 className="court-name">{court.name}</h1>
+            <h1 className="court-name">{court.name.toUpperCase()}</h1>
             <div className="court-meta">
               <SportPill sport={court.sport} />
-              <span className="court-location">IIT Bombay Sports Complex</span>
+              <span className="court-location">IIT Bombay · Sports Complex</span>
             </div>
           </div>
           <div className="court-availability-badge">
             <span className="avail-dot" />
-            Available for booking
+            Available
           </div>
         </div>
 
@@ -287,9 +328,9 @@ export default function CourtDetail() {
         <section className="section">
           <h2 className="section-title">Available Slots</h2>
           {slotsLoading ? (
-            <div style={{ padding: '2rem', textAlign: 'center' }}>Loading slots...</div>
+            <div style={{ padding: '2rem', textAlign: 'center', fontFamily: "var(--font-data)", fontSize: '11px', letterSpacing: '2px', textTransform: 'uppercase', color: '#444' }}>Loading slots…</div>
           ) : slotsError ? (
-            <div style={{ padding: '2rem', textAlign: 'center', color: 'red' }}>Error loading slots.</div>
+            <div style={{ padding: '2rem', textAlign: 'center', fontFamily: "var(--font-data)", fontSize: '11px', color: '#ff4d4d' }}>⚠ Error loading slots.</div>
           ) : (
             <div className="slot-grid">
               {slots.map((slot) => {
@@ -347,13 +388,15 @@ export default function CourtDetail() {
                 onClick={() => selectedSlot && setShowModal(true)}
               >
                 {selectedSlot
-                  ? `Confirm Booking — ${selectedSlot.start_time.substring(0, 5)} to ${selectedSlot.end_time.substring(0, 5)}`
-                  : "Select a slot to continue"}
+                  ? `BOOK ${selectedSlot.start_time.substring(0, 5)}–${selectedSlot.end_time.substring(0, 5)} →`
+                  : "SELECT A SLOT"}
               </button>
             </div>
           </div>
         </section>
       </div>
+
+      <Footer />
 
       {/* ── Modal ── */}
       {showModal && selectedSlot && (

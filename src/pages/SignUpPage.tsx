@@ -3,6 +3,14 @@ import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import "./SignUpPage.css";
 
+const TICKER_ITEMS = [
+  "Badminton Court 1 · 5 slots open",
+  "Tennis Court 1 · 7 slots open",
+  "Squash Court 1 · 2 slots open",
+  "Badminton Court 2 · Fully booked",
+  "Squash Court 2 · Fully booked",
+];
+
 const SignUpPage: React.FC = () => {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
@@ -31,113 +39,107 @@ const SignUpPage: React.FC = () => {
     try {
       const { error } = await signUp(email, password, fullName);
       if (error) {
-        setErrors({ ...next, auth: error.message });
+        setErrors({ auth: error.message });
       } else {
         alert("Signup successful! Please login.");
         navigate("/login");
       }
     } catch (err: any) {
-      setErrors({ ...next, auth: err.message || "An error occurred during sign up" });
+      setErrors({ auth: err.message || "An error occurred during sign up" });
     } finally {
       setLoading(false);
     }
   };
 
+  const tickerContent = TICKER_ITEMS.join("   ·   ");
+
   return (
-    <div className="auth-page">
-      <div className="auth-container">
-        {/* Logo */}
-        <div className="auth-logo">
-          <span className="logo-court">Court</span>
-          <span className="logo-book">Book</span>
+    <>
+      <div className="auth-ticker">
+        <div className="auth-ticker__inner">
+          {[...Array(6)].map((_, i) => (
+            <span key={i} className="auth-ticker__text">{tickerContent}</span>
+          ))}
         </div>
-        <p className="auth-tagline">Reserve your court, play your game.</p>
+      </div>
 
-        {/* Card */}
-        <div className="auth-card">
-          <h1 className="auth-card-title">Create account</h1>
-          <p className="auth-card-subtitle">Join CourtBook to start booking courts at your institute.</p>
+      <div className="auth-page">
+        <div className="auth-bg-number">02</div>
 
-          {errors.auth && <div className="form-error" style={{ marginBottom: "1rem", textAlign: "center" }}>{errors.auth}</div>}
-
-          <form onSubmit={handleSubmit} noValidate>
-            {/* Full Name */}
-            <div className="form-group">
-              <label className="form-label" htmlFor="fullName">
-                Full Name
-              </label>
-              <input
-                id="fullName"
-                type="text"
-                className={`form-input${errors.fullName ? " input-error" : ""}`}
-                placeholder="Aditya Kumar"
-                value={fullName}
-                onChange={(e) => setFullName(e.target.value)}
-                autoComplete="name"
-              />
-              {errors.fullName && <span className="form-error">{errors.fullName}</span>}
+        <div className="auth-container">
+          <div className="auth-card">
+            <div className="auth-logo-block">
+              <div className="auth-eyebrow">IIT Bombay Sports</div>
+              <div className="auth-logo">
+                COURT<span className="logo-accent">BOOK</span>
+              </div>
             </div>
 
-            {/* Email */}
-            <div className="form-group">
-              <label className="form-label" htmlFor="email">
-                Email address
-              </label>
-              <input
-                id="email"
-                type="email"
-                className={`form-input${errors.email ? " input-error" : ""}`}
-                placeholder="you@iitb.ac.in"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                autoComplete="email"
-              />
-              {errors.email && <span className="form-error">{errors.email}</span>}
+            <div className="auth-headline">CREATE<br />ACCOUNT.</div>
+            <p className="auth-tagline">Join CourtBook. Book courts. Play more.</p>
+
+            {errors.auth && <div className="auth-error">⚠ {errors.auth}</div>}
+
+            <form onSubmit={handleSubmit} noValidate>
+              <div className="form-group">
+                <label className="form-label" htmlFor="fullName">Full Name</label>
+                <input
+                  id="fullName"
+                  type="text"
+                  className={`form-input${errors.fullName ? " input-error" : ""}`}
+                  placeholder="Aditya Kumar"
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
+                  autoComplete="name"
+                />
+                {errors.fullName && <span className="form-error">⚠ {errors.fullName}</span>}
+              </div>
+
+              <div className="form-group">
+                <label className="form-label" htmlFor="email">Email Address</label>
+                <input
+                  id="email"
+                  type="email"
+                  className={`form-input${errors.email ? " input-error" : ""}`}
+                  placeholder="you@iitb.ac.in"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  autoComplete="email"
+                />
+                {errors.email && <span className="form-error">⚠ {errors.email}</span>}
+              </div>
+
+              <div className="form-group">
+                <label className="form-label" htmlFor="password">Password</label>
+                <input
+                  id="password"
+                  type="password"
+                  className={`form-input${errors.password ? " input-error" : ""}`}
+                  placeholder="Min. 8 characters"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  autoComplete="new-password"
+                />
+                {errors.password && <span className="form-error">⚠ {errors.password}</span>}
+              </div>
+
+              <button type="submit" className="btn-primary" disabled={loading}>
+                {loading ? (
+                  <><span className="btn-spinner" />CREATING ACCOUNT</>
+                ) : (
+                  "CREATE ACCOUNT →"
+                )}
+              </button>
+            </form>
+
+            <div className="auth-footer-link">
+              Already have an account?{" "}
+              <Link to="/login" className="auth-link">Sign in</Link>
             </div>
-
-            {/* Password */}
-            <div className="form-group">
-              <label className="form-label" htmlFor="password">
-                Password
-              </label>
-              <input
-                id="password"
-                type="password"
-                className={`form-input${errors.password ? " input-error" : ""}`}
-                placeholder="Min. 8 characters"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                autoComplete="new-password"
-              />
-              {errors.password && <span className="form-error">{errors.password}</span>}
-            </div>
-
-            {/* Submit */}
-            <button
-              type="submit"
-              className="btn-primary btn-full"
-              disabled={loading}
-            >
-              {loading ? (
-                <>
-                  <span className="btn-spinner" aria-hidden="true" />
-                  Creating account…
-                </>
-              ) : (
-                "Create Account"
-              )}
-            </button>
-          </form>
-
-          <div className="auth-footer-link">
-            Already have an account?{" "}
-            <Link to="/login" className="auth-link">
-              Sign in
-            </Link>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

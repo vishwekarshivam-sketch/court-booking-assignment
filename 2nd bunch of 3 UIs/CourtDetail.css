@@ -33,8 +33,8 @@
   --color-rejected-bg: #ffe8e8;
   --color-rejected-text: #8a1a1a;
 
-  --font-sans: "DM Sans", system-ui, sans-serif;
-  --font-mono: "DM Mono", "Menlo", monospace;
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-data);
 
   --radius-sm: 6px;
   --radius-md: 8px;
@@ -51,7 +51,7 @@
 }
 
 body {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   background: var(--color-surface);
   color: var(--color-text-body);
   -webkit-font-smoothing: antialiased;
@@ -327,7 +327,7 @@ body {
   border: 1.5px solid var(--color-border);
   background: var(--color-card);
   cursor: pointer;
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   transition: border-color 0.15s, background 0.15s, color 0.15s;
   min-width: 72px;
 }
@@ -370,7 +370,7 @@ body {
   cursor: pointer;
   background: var(--color-card);
   transition: border-color 0.15s, background 0.15s;
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -393,7 +393,7 @@ body {
 }
 
 .slot-time {
-  font-family: var(--font-mono);
+  font-family: var(--font-data);
   font-size: 11px;
   font-weight: 500;
   color: var(--color-primary-800);
@@ -483,7 +483,7 @@ body {
   height: 38px;
   padding: 0 18px;
   border-radius: var(--radius-md);
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
@@ -513,7 +513,7 @@ body {
   height: 38px;
   padding: 0 18px;
   border-radius: var(--radius-md);
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
@@ -534,7 +534,7 @@ body {
   height: 34px;
   padding: 0 12px;
   border-radius: var(--radius-sm);
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;
@@ -670,7 +670,7 @@ body {
 }
 
 .summary-mono {
-  font-family: var(--font-mono);
+  font-family: var(--font-data);
 }
 
 .modal-footer {

@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+
+/* ─── Tokens (same as shared design system) ──────────────── */
+:root {
+  --color-primary-800: #0F2B52;
+  --color-primary-700: #1A3F72;
+  --color-primary-50:  #E8EDF5;
+  --color-accent-500:  #1D7A4A;
+  --color-accent-600:  #166038;
+  --color-accent-700:  #0F5C30;
+  --color-surface:     #F0F3F8;
+  --color-card:        #FFFFFF;
+  --color-card-alt:    #F5F7FC;
+  --color-border:      #E2E8F0;
+  --color-text-primary:   #0F2B52;
+  --color-text-muted:     #6B7A99;
+  --color-text-secondary: #3D4F6B;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --radius-xl: 12px;
+  --radius-full: 9999px;
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-data);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+button { font-family: var(--font-body); cursor: pointer; }
+
+.cb-root {
+  font-family: var(--font-body);
+  background: var(--color-surface);
+  min-height: 100vh;
+  color: var(--color-text-primary);
+}
+
+/* ─── Navbar ─────────────────────────────────────────────── */
+.cb-nav {
+  height: 56px;
+  background: var(--color-primary-800);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.cb-logo { font-size: 16px; font-weight: 700; color: #fff; letter-spacing: -0.2px; }
+.cb-logo span { color: var(--color-accent-500); }
+.cb-nav-links { display: flex; gap: 28px; align-items: center; }
+.cb-nav-link {
+  font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.6);
+  cursor: pointer; padding-bottom: 4px; border-bottom: 2px solid transparent; text-decoration: none;
+  transition: color 0.15s, border-color 0.15s;
+}
+.cb-nav-link:hover { color: rgba(255,255,255,0.85); }
+.cb-nav-link.active { color: #fff; border-bottom-color: var(--color-accent-500); }
+.cb-nav-right { display: flex; align-items: center; gap: 10px; }
+.cb-avatar {
+  width: 32px; height: 32px; border-radius: var(--radius-full);
+  background: var(--color-accent-500); color: #fff; font-size: 12px; font-weight: 600;
+  display: flex; align-items: center; justify-content: center;
+}
+.cb-name { font-size: 13px; color: rgba(255,255,255,0.8); }
+
+/* ─── Page ───────────────────────────────────────────────── */
+.cb-page { max-width: 1200px; margin: 0 auto; padding: 28px 32px; }
+
+.cb-page-header {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  margin-bottom: 20px;
+}
+.cb-page-title { font-size: 22px; font-weight: 700; letter-spacing: -0.4px; line-height: 1.2; }
+.cb-page-sub { font-size: 14px; color: var(--color-text-muted); margin-top: 4px; }
+
+/* ─── Week Nav ───────────────────────────────────────────── */
+.cb-week-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 4px 6px;
+}
+.cb-week-btn {
+  background: transparent; border: none; color: var(--color-text-muted);
+  width: 28px; height: 28px; border-radius: 6px; display: flex; align-items: center; justify-content: center;
+  transition: background 0.15s, color 0.15s;
+}
+.cb-week-btn:hover { background: var(--color-primary-50); color: var(--color-primary-800); }
+.cb-week-label {
+  font-size: 13px; font-weight: 500; color: var(--color-text-primary);
+  display: flex; align-items: center; gap: 6px; padding: 0 4px; min-width: 160px; justify-content: center;
+}
+
+/* ─── Tabs ───────────────────────────────────────────────── */
+.cb-tabs {
+  background: var(--color-primary-50); border-radius: var(--radius-lg);
+  padding: 3px; display: inline-flex; gap: 2px; margin-bottom: 14px;
+}
+.cb-tab {
+  padding: 6px 16px; border-radius: 7px; font-size: 13px; font-weight: 500;
+  color: var(--color-text-muted); background: transparent; border: none; transition: all 0.15s;
+}
+.cb-tab.active { background: var(--color-card); color: var(--color-text-primary); box-shadow: 0 1px 3px rgba(15,43,82,0.12); }
+
+/* ─── Legend ─────────────────────────────────────────────── */
+.cb-legend {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.cb-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+.cb-legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+}
+.cb-legend-item.mine .cb-legend-dot    { background: var(--color-primary-800); }
+.cb-legend-item.booked .cb-legend-dot  { background: #F0C4C4; border: 1px solid #E8A0A0; }
+.cb-legend-item.available .cb-legend-dot { background: var(--color-card); border: 1px solid var(--color-border); }
+
+/* ─── Schedule Card ──────────────────────────────────────── */
+.cb-schedule-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.cb-schedule-grid {
+  display: grid;
+  grid-template-columns: 64px repeat(7, 1fr);
+}
+
+/* Day headers */
+.cb-time-label-header {
+  background: var(--color-card-alt);
+  border-bottom: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
+  min-height: 48px;
+}
+
+.cb-day-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 4px;
+  gap: 2px;
+  background: var(--color-card-alt);
+  border-bottom: 1px solid var(--color-border);
+  border-right: 1px solid #F4F6FB;
+}
+.cb-day-header.today {
+  background: var(--color-primary-50);
+}
+.cb-day-header.today .cb-day-date {
+  background: var(--color-primary-800);
+  color: #fff;
+}
+
+.cb-day-name {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.cb-day-date {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ─── Time Rows ──────────────────────────────────────────── */
+.cb-schedule-rows { overflow-y: auto; max-height: 520px; }
+
+.cb-time-row {
+  border-bottom: 1px solid #F4F6FB;
+}
+.cb-time-row:last-child { border-bottom: none; }
+
+.cb-time-label {
+  font-family: var(--font-data);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-right: 1px solid var(--color-border);
+  background: var(--color-card-alt);
+  min-height: 38px;
+}
+
+/* ─── Slot Cells ─────────────────────────────────────────── */
+.cb-slot-cell {
+  min-height: 38px;
+  border-right: 1px solid #F4F6FB;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.1s;
+  cursor: pointer;
+}
+.cb-slot-cell:last-child { border-right: none; }
+
+.cb-slot-cell.available:hover { background: var(--color-primary-50); }
+
+.cb-slot-cell.mine {
+  background: rgba(15, 43, 82, 0.08);
+}
+.cb-slot-cell.mine:hover { background: rgba(15, 43, 82, 0.14); }
+
+.cb-slot-cell.booked {
+  background: #FFF5F5;
+}
+.cb-slot-cell.booked:hover { background: #FFE8E8; }
+
+/* ─── Slot Tag ───────────────────────────────────────────── */
+.cb-slot-tag {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.cb-slot-tag.mine {
+  background: var(--color-primary-800);
+  color: #fff;
+}
+.cb-slot-tag.booked {
+  background: #FFE8E8;
+  color: #8A1A1A;
+  border: 1px solid #F0C4C4;
+}
+
+/* ─── Summary ────────────────────────────────────────────── */
+.cb-schedule-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.cb-summary-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.cb-summary-val {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+}
+.cb-summary-label {
+  display: block;
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}

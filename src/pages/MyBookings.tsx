@@ -13,6 +13,7 @@ import { useMyBookings } from "../hooks/useMyBookings";
 import { useAuth } from "../context/AuthContext";
 import { supabase } from "../lib/supabaseClient";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import "./MyBookings.css";
 
 /* ─── Types ─────────────────────────────────────────────── */
@@ -223,12 +224,12 @@ export default function MyBookings() {
         {/* ── Page Title Row ── */}
         <div className="page-top-row">
           <div>
-            <h1 className="page-title">My Bookings</h1>
+            <p className="page-eyebrow">IIT Bombay · Sports Complex</p>
+            <h1 className="page-title">MY<br /><span className="accent">BOOKINGS.</span></h1>
             <p className="page-subtitle">Track and manage all your court reservations.</p>
           </div>
           <Link to="/courts" className="btn-primary" style={{ textDecoration: "none" }}>
-            <Plus width={15} height={15} />
-            New Booking
+            NEW BOOKING →
           </Link>
         </div>
 
@@ -250,9 +251,9 @@ export default function MyBookings() {
 
         {/* ── Table or Empty ── */}
         {loading ? (
-          <div style={{ padding: '3rem', textAlign: 'center' }}>Loading your bookings...</div>
+          <div style={{ padding: '3rem', textAlign: 'center', fontFamily: "var(--font-data)", fontSize: '11px', letterSpacing: '2px', textTransform: 'uppercase', color: '#444' }}>Loading bookings…</div>
         ) : error ? (
-          <div style={{ padding: '3rem', textAlign: 'center', color: 'red' }}>Error loading bookings.</div>
+          <div style={{ padding: '3rem', textAlign: 'center', fontFamily: "var(--font-data)", fontSize: '11px', color: '#ff4d4d' }}>⚠ Error loading bookings.</div>
         ) : filtered.length === 0 ? (
           <EmptyState tab={activeTab} />
         ) : (
@@ -316,6 +317,8 @@ export default function MyBookings() {
           </div>
         )}
       </div>
+
+      <Footer />
 
       {cancelTarget && (
         <CancelModal

@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
-import { LayoutGrid, Calendar, Home, LogOut, ChevronDown } from 'lucide-react'
+import { LogOut, ChevronDown } from 'lucide-react'
 import './Navbar.css'
 
 type ActivePage = 'courts' | 'my-bookings' | 'admin' | ''
@@ -42,21 +42,18 @@ const Navbar: React.FC<NavbarProps> = ({ activePage = '' }) => {
     <nav className="navbar">
       <div className="navbar-inner">
         <div className="navbar-left">
-          <Link to="/" className="logo" style={{ textDecoration: 'none' }}>
-            Court<span className="logo-accent">Book</span>
+          <Link to="/" className="logo">
+            COURT<span className="logo-accent">BOOK</span>
           </Link>
           <div className="nav-links">
             <Link to="/courts" className={`nav-link${activePage === 'courts' ? ' active' : ''}`}>
-              <LayoutGrid width={14} height={14} />
               Courts
             </Link>
             <Link to="/my-bookings" className={`nav-link${activePage === 'my-bookings' ? ' active' : ''}`}>
-              <Calendar width={14} height={14} />
               My Bookings
             </Link>
             {isAdmin && (
               <Link to="/admin" className={`nav-link${activePage === 'admin' ? ' active' : ''}`}>
-                <Home width={14} height={14} />
                 Admin
               </Link>
             )}
@@ -73,10 +70,10 @@ const Navbar: React.FC<NavbarProps> = ({ activePage = '' }) => {
             <span className="nav-name">{name}</span>
             <div className={`avatar${isAdmin ? ' avatar-primary' : ''}`}>{initials}</div>
             <ChevronDown
-              width={14}
-              height={14}
+              width={12}
+              height={12}
               style={{
-                color: 'rgba(255,255,255,0.6)',
+                color: '#444',
                 transition: 'transform 0.15s',
                 transform: dropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)',
               }}
@@ -92,10 +89,9 @@ const Navbar: React.FC<NavbarProps> = ({ activePage = '' }) => {
                   <p className="user-dropdown__email">{user?.email}</p>
                 </div>
               </div>
-              <div className="user-dropdown__divider" />
               <button className="user-dropdown__item user-dropdown__item--danger" onClick={handleSignOut}>
-                <LogOut width={15} height={15} />
-                Sign out
+                <LogOut width={14} height={14} />
+                Sign Out
               </button>
             </div>
           )}
