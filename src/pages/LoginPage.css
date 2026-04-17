@@ -109,7 +109,7 @@
 
 /* Headline */
 .auth-headline {
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: 36px;
   font-weight: 800;
   letter-spacing: -1px;
