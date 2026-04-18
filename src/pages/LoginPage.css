@@ -1,5 +1,12 @@
 /* Auth — Login */
 
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
 .auth-page {
   min-height: 100vh;
   background: #f4f6f9;
@@ -251,3 +258,4 @@
 
 .auth-link:hover {
   opacity: 0.7;
+}
